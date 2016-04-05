@@ -5,10 +5,10 @@ namespace IglesBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class DefaultController extends Controller
+class SeriesController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/series", name="séries")
      */
     public function indexAction()
     {

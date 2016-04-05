@@ -15,5 +15,8 @@ class DefaultController extends Controller
     	return $this->render('IglesBundle::index.html.twig');
     }
 
-    
+    // public function profile_userAction()
+    // {
+    //     return $this->render('IglesBundle::index.html.twig');
+    // }
 }

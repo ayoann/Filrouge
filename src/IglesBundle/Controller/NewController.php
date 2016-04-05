@@ -5,15 +5,15 @@ namespace IglesBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class DefaultController extends Controller
+class NewController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/news", name="news")
      */
     public function indexAction()
     {
-    	return $this->render('IglesBundle::index.html.twig');
+    	return $this->render('IglesBundle::news.html.twig');
     }
 
-    
+   
 }
