@@ -1,0 +1,26 @@
+{% extends '::index.html.twig' %}
+    {% block body %}
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <a class="col-xs-3 col-xs-offset-11" href="{{ path('fos_user_security_logout') }}">
+                    {{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a class="col-xs-3 col-xs-offset-8" href="{{ path('fos_user_security_login') }}">{{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>
+
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="flash-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+{% endblock %}
