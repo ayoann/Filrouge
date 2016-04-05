@@ -5,14 +5,14 @@ namespace IglesBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class EpisodeController extends Controller
+class AdminController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/admin", name="admin")
      */
     public function indexAction()
     {
-    	return $this->render('IglesBundle::index.html.twig');
+    	return $this->render('IglesBundle::admin.html.twig');
     }
 
     // public function profile_userAction()
