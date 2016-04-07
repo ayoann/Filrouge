@@ -12,18 +12,10 @@ nav{
 }
 a{
 	text-decoration: none;
-<<<<<<< HEAD
 	color:black;
 }
 a:hover{
 	color:white;
-	color: black;
-=======
-	color: white;
->>>>>>> yoann
-}
-a:hover{
-	color: white;
 }
 #Accueil:hover{
 	background-color: rgb(78, 185, 198);
