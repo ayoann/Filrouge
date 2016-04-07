@@ -1,0 +1,5 @@
+igles_promote_user:
+    path:    /promote/{id}
+    defaults: { _controller: IglesBundle:Admin:promoteUser, id: 1 }
+    requirements:
+        id: /d+

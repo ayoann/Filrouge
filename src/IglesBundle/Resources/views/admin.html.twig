@@ -4,7 +4,7 @@
 
 <h1>Liste des utilisateurs</h1>
 {% for user in users %}
-<li>{{ user.username|e }}</li>
+<li>{{ user.username|e }} id: {{user.id}}</li><a href="{{ path('igles_promote_user', { 'id': user.id }) }}"><input type="submit" value="Promote"></a>
 {% endfor %}
 
 {% endblock %}

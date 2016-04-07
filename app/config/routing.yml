@@ -5,3 +5,13 @@ igles:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+igles_admin:
+    resource: "@IglesBundle/Controller/AdminController.php"
+    type:     annotation
+
+igles_promote_user:
+    path:    /promote/{id}
+    defaults: { _controller: IglesBundle:Admin:promoteUser }
+    requirements:
+        id: \d+
