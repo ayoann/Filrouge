@@ -2,4 +2,9 @@
 
 {% block body %}
 
+<h1>Liste des Utilisateurs</h1>
+{% for user in users %}
+<li>{{ user.username|e }}</li>
+{% endfor %}
+
 {% endblock %}
