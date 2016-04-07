@@ -8,7 +8,7 @@ header{
 	background-image: url("../images/fontheader.png");
 }
 nav{
-	margin-top: 73px;
+	margin-top: 74px;
 }
 a{
 	text-decoration: none;
@@ -68,12 +68,13 @@ form{
 	margin-top: 25px;
 }
 #colorform{
+	margin-top: 45px;
 	background-color: rgb(178, 179, 186);
 	border-top-right-radius: 3% 4%;
 	border-bottom-right-radius: 3% 4%;
 	border-top-left-radius: 3% 4%;
 	border-bottom-left-radius: 3% 4%;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	margin-left: 37%;
 }
 .btn-default:hover{
