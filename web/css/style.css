@@ -4,38 +4,54 @@ html, body{
 	background-color: rgb(243, 242, 240)
 }
 header{
-	background-image: url("");
+	height: 20%;
+	background-image: url("../images/fontheader.png");
 }
 nav{
-	margin-top: 15px;
+	margin-top: 73px;
 }
 a{
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 a:hover{
 	color: white;
 }
+#Accueil:hover{
+	background-color: rgb(78, 185, 198);
+}
+#News:hover{
+	background-color: rgb(253, 181, 21);
+}
+#Series:hover{
+	background-color: rgb(235, 52, 46);
+}
+#programmes:hover{
+	background-color: #ef7a35;
+}
+#Membres:hover{
+	background-color: rgb(93, 188, 118);
+}
 #Accueil{
 	height: 40px;
 	padding-top: 10px;
-	background-color: rgb(235, 52, 46);
+	background-color: rgb(178, 179, 186);
 	border-top-left-radius: 5% 10%;
 }
 #News{
 	height: 40px;
 	padding-top: 10px;
-	background-color: rgb(250, 179, 50);
+	background-color: rgb(178, 179, 186);
 }
 #Series{
 	height: 40px;
 	padding-top: 10px;
-	background-color: rgb(78, 185, 198);
+	background-color: rgb(178, 179, 186);
 }
 #programmes{
 	height: 40px;
 	padding-top: 10px;
-	background-color: rgb(91, 190, 148);
+	background-color: rgb(178, 179, 186);
 	
 }
 #Forum{
@@ -45,12 +61,15 @@ a:hover{
 #Membres{
 	height: 40px;
 	padding-top: 10px;
-	background-color: rgb(250, 179, 50);
+	background-color: rgb(178, 179, 186);
 	border-top-right-radius: 3% 10%;
 }
 form{
 	margin-top: 25px;
 }
 footer{
-	margin-top: 300px;
+	height: 40px;
+	margin-top: 390px;
+	background-image: url("../images/fontheader.png");
+	padding-top: 10px;
 }
