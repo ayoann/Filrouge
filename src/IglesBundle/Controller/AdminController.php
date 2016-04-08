@@ -22,11 +22,12 @@ class AdminController extends Controller
      * @Route("/admin/promote/{id}", name="igles_promote_user")
      */
     public function promoteUserAction($id=0){
-        $user = $this->getUser();
-
-        $userManager = $this->get('fos_user.user_manager');    
-        $user->addRole('ROLE_ADMIN');
-        $userManager->updateUser($user);
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getDoctrine()->getRepository("IglesBundle:Users")->find($id);
+        $user->addRole("ROLE_ADMIN");
+ 
+        $em->persist($user);
+        $em->flush();
         return $this->render('IglesBundle::index.html.twig');
     }
 }
