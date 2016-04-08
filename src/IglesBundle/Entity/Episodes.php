@@ -52,7 +52,7 @@ class Episodes
     /**
      * @var string
      *
-     * @ORM\Column(name="serie", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Series", inversedBy="episode")
      */
     private $serie;
 

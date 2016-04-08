@@ -45,7 +45,7 @@ class Series
     /**
      * @var string
      *
-     * @ORM\Column(name="episode", type="string", length=255)
+     * @ORM\OneToMany(targetEntity="Episodes", mappedBy="serie", cascade={"remove"})
      */
     private $episode;
 
@@ -150,5 +150,35 @@ class Series
     public function getEpisode()
     {
         return $this->episode;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->episode = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add episode
+     *
+     * @param \IglesBundle\Entity\Episodes $episode
+     * @return Series
+     */
+    public function addEpisode(\IglesBundle\Entity\Episodes $episode)
+    {
+        $this->episode[] = $episode;
+
+        return $this;
+    }
+
+    /**
+     * Remove episode
+     *
+     * @param \IglesBundle\Entity\Episodes $episode
+     */
+    public function removeEpisode(\IglesBundle\Entity\Episodes $episode)
+    {
+        $this->episode->removeElement($episode);
     }
 }

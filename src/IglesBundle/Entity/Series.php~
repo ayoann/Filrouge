@@ -45,7 +45,7 @@ class Series
     /**
      * @var string
      *
-     * @ORM\Column(name="episode", type="string", length=255)
+     * @ORM\OneToMany(targetEntity="Episodes", mappedBy="serie", cascade={"remove"})
      */
     private $episode;
 

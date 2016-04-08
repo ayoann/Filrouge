@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+<div class="row">
+	<div class="col-xs-12 col-xs-offset-4">
+	   <ul>
+	   		{% for episode in episodes %}
+	   			<a href="{{ path('episode', { 'id' : serie.id})}}"><h3>{{ serie.nomSerie }}</h3></a>
+	   			<img src="{{ serie.posterSerie }}" alt="poster">
+	   		{% endfor %}
+	   </ul>
+	</div>	
+</div>
+{% endblock %}

@@ -12,8 +12,12 @@ class SeriesController extends Controller
      */
     public function indexAction()
     {
-    	return $this->render('IglesBundle::index.html.twig');
-    }
+        $em = $this->getDoctrine()->getManager();
 
-    
+        $series = $em->getRepository('IglesBundle:Series')->findAll();
+
+        return $this->render('series/series.html.twig', array(
+            'series' => $series,
+        ));
+    }
 }

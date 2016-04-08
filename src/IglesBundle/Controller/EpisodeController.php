@@ -8,15 +8,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class EpisodeController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/episode", name="episode")
      */
-    public function indexAction()
+     public function selectAction($id)
     {
-    	return $this->render('IglesBundle::index.html.twig');
-    }
+        $episodes=$this->getDoctrine()->getRepository('IglesBundle:Episode')
+        ->find($id);
 
-    // public function profile_userAction()
-    // {
-    //     return $this->render('IglesBundle::index.html.twig');
-    // }
+        return $this->render('IglesBundle:Episode:episode.html.twig', 
+            array('episode' => $episodes));
+    }
 }
