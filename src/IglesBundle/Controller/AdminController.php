@@ -18,9 +18,10 @@ class AdminController extends Controller
 
         return $this->render('IglesBundle::admin.html.twig', array('users' =>   $users));
     }
-
-    public function promoteUserAction($id){
-
+    /**
+     * @Route("/admin/promote/{id}", name="igles_promote_user")
+     */
+    public function promoteUserAction($id=0){
         $user = $this->getUser();
 
         $userManager = $this->get('fos_user.user_manager');    

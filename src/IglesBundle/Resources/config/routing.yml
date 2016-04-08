@@ -1,9 +1,3 @@
-igles_promote_user:
-    path:    /promote/{id}
-    defaults: { _controller: IglesBundle:Admin:promoteUser, id: 1 }
-    requirements:
-        id: /d+
-
 igles_select_episode:
     path:    /episode/{id}
     defaults: { _controller: IglesBundle:Episode:select, id: 1 }

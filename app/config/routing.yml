@@ -8,10 +8,8 @@ fos_user:
 
 igles_admin:
     resource: "@IglesBundle/Controller/AdminController.php"
-    type:     annotation
+    type: annotation
 
-igles_promote_user:
-    path:    /promote/{id}
-    defaults: { _controller: IglesBundle:Admin:promoteUser }
-    requirements:
-        id: \d+
+igles:
+    resource: "@IglesBundle/Resources/config/routing.yml"
+
