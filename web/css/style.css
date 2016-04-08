@@ -8,11 +8,11 @@ header{
 	background-image: url("../images/fontheader.png");
 }
 nav{
-	margin-top: 74px;
+	margin-top: 62px;
 }
 a{
 	text-decoration: none;
-	color:black;
+	color:white;
 }
 a:hover{
 	color:white;
@@ -35,33 +35,19 @@ a:hover{
 #Accueil{
 	height: 40px;
 	padding-top: 10px;
-	background-color: rgb(178, 179, 186);
+	background-color: #686868;
 	border-top-left-radius: 5% 10%;
 }
-#News{
+#News, #Series, #programmes, #Forum{
 	height: 40px;
 	padding-top: 10px;
-	background-color: rgb(178, 179, 186);
-}
-#Series{
-	height: 40px;
-	padding-top: 10px;
-	background-color: rgb(178, 179, 186);
-}
-#programmes{
-	height: 40px;
-	padding-top: 10px;
-	background-color: rgb(178, 179, 186);
-	
-}
-#Forum{
-	height: 40px;
-	padding-top: 10px;
+	background-color: #686868;
+	font-family: Arial, Helvetica;
 }
 #Membres{
 	height: 40px;
 	padding-top: 10px;
-	background-color: rgb(178, 179, 186);
+	background-color: #686868;
 	border-top-right-radius: 3% 10%;
 }
 form{
@@ -69,19 +55,43 @@ form{
 }
 #colorform{
 	margin-top: 45px;
-	background-color: rgb(178, 179, 186);
+	background-color: #7F7E7D;
 	border-top-right-radius: 3% 4%;
 	border-bottom-right-radius: 3% 4%;
 	border-top-left-radius: 3% 4%;
 	border-bottom-left-radius: 3% 4%;
 	padding-bottom: 15px;
 	margin-left: 37%;
+	color:white;
+}
+#colorformoublie{
+	padding-top: 10px;
+	margin-top: 45px;
+	background-color: #7F7E7D;
+	border-top-right-radius: 3% 4%;
+	border-bottom-right-radius: 3% 4%;
+	border-top-left-radius: 3% 4%;
+	border-bottom-left-radius: 3% 4%;
+	padding-bottom: 15px;
+	margin-left: 37%;
+	color:white;
+}
+#submit{
+	margin-top: 10px;
 }
 .btn-default:hover{
 	background-color: rgb(78, 185, 198);
 }
 #signin:hover{
 	background-color: rgb(253, 181, 21);
+}
+#signin{
+	margin-top:-54.5px;
+	margin-left: -10px;
+}
+#motdepasse{
+	margin-left: -10px;
+	text-decoration: underline;
 }
 footer{
 	height: 40px;
