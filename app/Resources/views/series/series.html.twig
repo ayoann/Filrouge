@@ -6,7 +6,7 @@
 	<div class="col-xs-12 col-xs-offset-4">
 	   <ul>
 	   		{% for serie in series %}
-	   			<a href="{{ path('sériesone', { 'id' : serie.id})}}"><h3>{{ serie.nomSerie }}</h3></a>
+	   			<a id="series" href="{{ path('sériesone', { 'id' : serie.id})}}"><h3>{{ serie.nomSerie }}</h3></a>
 	   			<img src="{{ serie.posterSerie }}" alt="poster">
 	   		{% endfor %}
 	   </ul>

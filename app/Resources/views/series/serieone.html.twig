@@ -16,7 +16,7 @@
 	<div class="col-xs-6 col-xs-offset-4">
 		<ul>
 			{% for serie in series.episode %}
-				<a href="{{ path('episode', { 'id' : serie.id})}}"><p>{{ serie.numeroEpisode }}</p></a>
+				<a id="episodes" href="{{ path('episode', { 'id' : serie.id})}}"><p>{{ serie.numeroEpisode }}</p></a>
 			{% endfor %}
 		</ul>
 	</div>
