@@ -2,9 +2,14 @@
 
 
 {% block body %}
-   <ul>
-   		{% for serie in series %}
-   			<li>{{ serie.nomSerie }}</li>
-   		{% endfor %}
-   </ul>
+<div class="row">
+	<div class="col-xs-12 col-xs-offset-4">
+	   <ul>
+	   		{% for serie in series %}
+	   			<a href="{{ path('episode', { 'id' : serie.id})}}"><h3>{{ serie.nomSerie }}</h3></a>
+	   			<img src="{{ serie.posterSerie }}" alt="poster">
+	   		{% endfor %}
+	   </ul>
+	</div>	
+</div>
 {% endblock %}
