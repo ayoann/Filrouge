@@ -1,18 +1,35 @@
 {% extends '::base.html.twig'%}
 
 {% block body %}
-
-<h1>Liste des membres</h1>
-{% for user in users %}
-	{% for role in user.roles%}
-		<li> {{ role }} </li>
-	{% endfor %}
-<li>{{ user.username|e }} </li>
-<a href="{{ path('igles_promote_user', { 'id': user.id }) }}"><input type="submit" value="Promote"></a>
-	{% if user.enabled == 1 %}
-	<a href="{{ path('igles_ban_user', { 'id': user.id }) }}"><input type="submit" value="Ban"></a>
-		{% elseif user.enabled == 0 %}
-	<a href="{{ path('igles_unban_user', { 'id': user.id }) }}"><input type="submit" value="Unban"></a>
-	{% endif %}
-{% endfor %}
+<div class="row"><h1 class="col-xs-4 col-xs-offset-4">Liste des membres</h1></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nom utilisateur</th>
+						<th>Groupe</th>
+						<th>Promote</th>
+						<th>Bannir</th>
+					</tr>
+				</thead>
+				{% for user in users %}
+				<tbody>
+					<tr>
+						<td>{{ user.username|e }} </td>
+						<td>{% for role in user.roles%}
+								<ul>
+									<li>{{ role }}</li>
+								</ul> 
+							{% endfor %}</td>
+						<td><a href="{{ path('igles_promote_user', { 'id': user.id }) }}"><input 
+						class="btn btn-success" class="btn btn-default" type="submit" value="Promote"></a></td>
+						
+						<td>{% if user.enabled == 1 %}
+					<a href="{{ path('igles_ban_user', { 'id': user.id }) }}"><input class="btn btn-danger" type="submit" value="Ban"></a>
+					{% elseif user.enabled == 0 %}
+					<a href="{{ path('igles_unban_user', { 'id': user.id }) }}"><input class="btn btn-warning" type="submit" value="Unban"></a>{% endif %}</td>
+					</tr>
+				</tbody>
+				{% endfor %}
+			</table>
 {% endblock %}
