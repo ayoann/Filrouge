@@ -32,6 +32,19 @@ class AdminController extends Controller
     }
 
     /**
+     * @Route("/admin/demote/{id}", name="igles_demote_user")
+     */
+    public function demoteUserAction($id=0){
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getDoctrine()->getRepository("IglesBundle:Users")->find($id);
+        $user->removeRole("ROLE_ADMIN");
+ 
+        $em->persist($user);
+        $em->flush();
+        return $this->render('IglesBundle::index.html.twig');
+    }
+
+    /**
      * @Route("/admin/ban/{id}", name="igles_ban_user")
      */
     public function BanUserAction($id=0){
