@@ -20,8 +20,9 @@
 		    	<label for="remember_me">{{ 'Se souvenir de moi'|trans }}</label>
 			</div>
 		    <input class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Log In'|trans }}" />
-		    <input id="signin" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Sign In'|trans }}" />
 		</form>
+		<a class="col-xs-2 col-xs-offset-3" href="{{ path('fos_user_registration_register')}}"><input id="signin" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="Sign In" /></a>
+		<a id="motdepasse" class="col-xs-8" href="{{path('fos_user_resetting_request')}}">Mot de passe oublié</a>
 	</div>
 
 {% endblock fos_user_content %}
