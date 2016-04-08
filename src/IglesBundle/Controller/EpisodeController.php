@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class EpisodeController extends Controller
 {
     /**
-     * @Route("/episode", name="episode")
+     * @Route("/episode/{id}", name="episode")
      */
      public function selectAction($id)
     {
