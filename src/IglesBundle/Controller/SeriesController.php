@@ -26,20 +26,15 @@ class SeriesController extends Controller
 
      public function selectAction($id)
     {
+        $em = $this->getDoctrine()->getManager();
+
         $series=$this->getDoctrine()->getRepository('IglesBundle:Series')
         ->find($id);
 
+               
         return $this->render('series/serieone.html.twig', 
             array('series' => $series));
 
-        $em = $this->getDoctrine()->getManager();
 
-        $episode=$this->getDoctrine()->getRepository('IglesBundle:Episodes')
-        ->getNumeroEpisode();
-
-        return $this->render('series/serieone.html.twig', 
-            array('episodes' => $episode));
-
-        
     }
 }
