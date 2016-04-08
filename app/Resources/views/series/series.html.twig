@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+   <ul>
+   		{% for serie in series %}
+   			<li>{{ serie.nomSerie }}</li>
+   		{% endfor %}
+   </ul>
+{% endblock %}
