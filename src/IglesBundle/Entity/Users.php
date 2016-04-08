@@ -36,5 +36,6 @@ class Users extends BaseUser
     {
         parent::__construct();
 
+    $this->roles = array('ROLE_USER'); // Ajoute le ROLE_USER par défaut lors de l'inscription au site
     }
 }

@@ -18,14 +18,48 @@ class AdminController extends Controller
 
         return $this->render('IglesBundle::admin.html.twig', array('users' =>   $users));
     }
-
-    public function promoteUserAction($id){
-
-        $user = $this->getUser();
-
-        $userManager = $this->get('fos_user.user_manager');    
-        $user->addRole('ROLE_ADMIN');
-        $userManager->updateUser($user);
+    /**
+     * @Route("/admin/promote/{id}", name="igles_promote_user")
+     */
+    public function promoteUserAction($id=0){
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getDoctrine()->getRepository("IglesBundle:Users")->find($id);
+        $user->addRole("ROLE_ADMIN");
+ 
+        $em->persist($user);
+        $em->flush();
         return $this->render('IglesBundle::index.html.twig');
+    }
+
+    /**
+     * @Route("/admin/ban/{id}", name="igles_ban_user")
+     */
+    public function BanUserAction($id=0){
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getDoctrine()->getRepository("IglesBundle:Users")->find($id);
+        $user->setEnabled(0);
+ 
+        $em->persist($user);
+        $em->flush();
+        return $this->render('IglesBundle::index.html.twig');
+    }
+
+
+    /**
+     * @Route("/admin/unban/{id}", name="igles_unban_user")
+     */
+    public function UnbanUserAction($id=0){
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getDoctrine()->getRepository("IglesBundle:Users")->find($id);
+        $user->setEnabled(1);
+ 
+        $em->persist($user);
+        $em->flush();
+        return $this->render('IglesBundle::index.html.twig');
+    }
+
+    public function __toString()
+    {
+        return $this->getUser();
     }
 }

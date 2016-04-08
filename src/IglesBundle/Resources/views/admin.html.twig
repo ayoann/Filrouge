@@ -2,9 +2,17 @@
 
 {% block body %}
 
-<h1>Liste des utilisateurs</h1>
+<h1>Liste des membres</h1>
 {% for user in users %}
-<li>{{ user.username|e }} id: {{user.id}}</li><a href="{{ path('igles_promote_user', { 'id': user.id }) }}"><input type="submit" value="Promote"></a>
+	{% for role in user.roles%}
+		<li> {{ role }} </li>
+	{% endfor %}
+<li>{{ user.username|e }} </li>
+<a href="{{ path('igles_promote_user', { 'id': user.id }) }}"><input type="submit" value="Promote"></a>
+	{% if user.enabled == 1 %}
+	<a href="{{ path('igles_ban_user', { 'id': user.id }) }}"><input type="submit" value="Ban"></a>
+		{% elseif user.enabled == 0 %}
+	<a href="{{ path('igles_unban_user', { 'id': user.id }) }}"><input type="submit" value="Unban"></a>
+	{% endif %}
 {% endfor %}
-
 {% endblock %}
