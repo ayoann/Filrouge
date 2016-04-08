@@ -4,8 +4,8 @@ igles_promote_user:
     requirements:
         id: /d+
 
-igles_select_episode:
-    path:    /episode/{id}
-    defaults: { _controller: IglesBundle:Episode:select, id: 1 }
+igles_select_serie:
+    path:    /series/{id}
+    defaults: { _controller: IglesBundle:Series:select, id: 1 }
     requirements:
         id: /d+

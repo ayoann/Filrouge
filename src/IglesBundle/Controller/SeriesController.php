@@ -20,4 +20,26 @@ class SeriesController extends Controller
             'series' => $series,
         ));
     }
+    /**
+     * @Route("/series/{id}", name="sériesone")
+     */
+
+     public function selectAction($id)
+    {
+        $series=$this->getDoctrine()->getRepository('IglesBundle:Series')
+        ->find($id);
+
+        return $this->render('series/serieone.html.twig', 
+            array('series' => $series));
+
+        $em = $this->getDoctrine()->getManager();
+
+        $episode=$this->getDoctrine()->getRepository('IglesBundle:Episodes')
+        ->getNumeroEpisode();
+
+        return $this->render('series/serieone.html.twig', 
+            array('episodes' => $episode));
+
+        
+    }
 }

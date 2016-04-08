@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class SeriesRepository extends EntityRepository
 {
+	public function getEpisodes()
+	{
+		$query = $em->createQuery(
+    		'SELECT s
+    		FROM IglesBundle:Series s
+    		INNER JOIN s.episode e');
+		
+		$series = $query->getResult();
+	}
 }

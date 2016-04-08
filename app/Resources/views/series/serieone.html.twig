@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+<div class="row">
+	<div class="col-xs-12 col-xs-offset-4">
+	   <ul>
+	   			<h3>{{ series.nomSerie }}</h3></a>
+	   			<img src="{{ series.posterSerie }}" alt="poster">
+	   </ul>
+	</div>	
+</div>
+<div class="row">
+	
+</div>
+	<div class="col-xs-6 col-xs-offset-4">
+		<ul>
+				<h3>{{ series.episodes.numeroEpisode }}</h3></a>
+		</ul>
+	</div>
+</div>
+
+{% endblock %}

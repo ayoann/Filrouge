@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="col-xs-12 col-xs-offset-4">
 	   <ul>
-	   		{% for episode in episodes %}
+	   		{% for series in series %}
 	   			<a href="{{ path('episode', { 'id' : serie.id})}}"><h3>{{ serie.nomSerie }}</h3></a>
 	   			<img src="{{ serie.posterSerie }}" alt="poster">
 	   		{% endfor %}
