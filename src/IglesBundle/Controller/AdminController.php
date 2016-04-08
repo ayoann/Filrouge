@@ -31,6 +31,33 @@ class AdminController extends Controller
         return $this->render('IglesBundle::index.html.twig');
     }
 
+    /**
+     * @Route("/admin/ban/{id}", name="igles_ban_user")
+     */
+    public function BanUserAction($id=0){
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getDoctrine()->getRepository("IglesBundle:Users")->find($id);
+        $user->setEnabled(0);
+ 
+        $em->persist($user);
+        $em->flush();
+        return $this->render('IglesBundle::index.html.twig');
+    }
+
+
+    /**
+     * @Route("/admin/unban/{id}", name="igles_unban_user")
+     */
+    public function UnbanUserAction($id=0){
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getDoctrine()->getRepository("IglesBundle:Users")->find($id);
+        $user->setEnabled(1);
+ 
+        $em->persist($user);
+        $em->flush();
+        return $this->render('IglesBundle::index.html.twig');
+    }
+
     public function __toString()
     {
         return $this->getUser();
