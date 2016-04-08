@@ -30,4 +30,9 @@ class AdminController extends Controller
         $em->flush();
         return $this->render('IglesBundle::index.html.twig');
     }
+
+    public function __toString()
+    {
+        return $this->getUser();
+    }
 }
