@@ -52,9 +52,9 @@ class Episodes
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Series", inversedBy="episode")
+     * @ORM\ManyToOne(targetEntity="Saison", inversedBy="episodes")
      */
-    private $serie;
+    private $saison;
 
 
     /**
@@ -160,25 +160,25 @@ class Episodes
     }
 
     /**
-     * Set serie
+     * Set saison
      *
-     * @param string $serie
+     * @param string $saison
      * @return Episodes
      */
-    public function setSerie($serie)
+    public function setSaison($saison)
     {
-        $this->serie = $serie;
+        $this->saison = $saison;
 
         return $this;
     }
 
     /**
-     * Get serie
+     * Get saison
      *
      * @return string 
      */
-    public function getSerie()
+    public function getSaison()
     {
-        return $this->serie;
+        return $this->saison;
     }
 }

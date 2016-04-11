@@ -49,6 +49,13 @@ class Series
      */
     private $episode;
 
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="Saison", mappedBy="serie", cascade={"remove"})
+     */
+    private $saisons;
+
 
     /**
      * Get id
@@ -130,26 +137,26 @@ class Series
     }
 
     /**
-     * Set episode
+     * Set saisons
      *
-     * @param string $episode
+     * @param string $saisons
      * @return Series
      */
-    public function setEpisode($episode)
+    public function setSaisons($saisons)
     {
-        $this->episode = $episode;
+        $this->saisons = $saisons;
 
         return $this;
     }
 
     /**
-     * Get episode
+     * Get saisons
      *
      * @return string 
      */
-    public function getEpisode()
+    public function getSaisons()
     {
-        return $this->episode;
+        return $this->saisons;
     }
     /**
      * Constructor
@@ -157,6 +164,7 @@ class Series
     public function __construct()
     {
         $this->episode = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->saisons = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -180,5 +188,38 @@ class Series
     public function removeEpisode(\IglesBundle\Entity\Episodes $episode)
     {
         $this->episode->removeElement($episode);
+    }
+
+    /**
+     * Get episode
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEpisode()
+    {
+        return $this->episode;
+    }
+
+    /**
+     * Add saisons
+     *
+     * @param \IglesBundle\Entity\Saison $saisons
+     * @return Series
+     */
+    public function addSaison(\IglesBundle\Entity\Saison $saisons)
+    {
+        $this->saisons[] = $saisons;
+
+        return $this;
+    }
+
+    /**
+     * Remove saisons
+     *
+     * @param \IglesBundle\Entity\Saison $saisons
+     */
+    public function removeSaison(\IglesBundle\Entity\Saison $saisons)
+    {
+        $this->saisons->removeElement($saisons);
     }
 }

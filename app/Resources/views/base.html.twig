@@ -16,7 +16,11 @@
                     <a href="{{ path('news') }}"><div id="News"class="col-xs-2 text-center">News</div> 
                     <a href="{{ path('séries') }}"><div id="Series" class="col-xs-2 text-center">Séries</div> </a>
                     <div id="programmes" class="col-xs-4 text-center">Programmes séries</div>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <a href="{{ path('fos_user_profile_show') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
+                    {% else %}
                     <a href="{{ path('fos_user_security_login') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
+                    {% endif %}
                 </nav>
             </div>
         </header>

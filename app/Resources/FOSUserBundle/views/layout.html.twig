@@ -1,7 +1,7 @@
 {% extends '::index.html.twig' %}
     {% block body %}
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <a class="col-xs-3 col-xs-offset-8" href="{{ path('fos_user_security_logout') }}">
+                <a id="linkdeconnexion" class="col-xs-3 col-xs-offset-8" href="{{ path('fos_user_security_logout') }}">
                     {{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}
                 </a>
             {% endif %}

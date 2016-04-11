@@ -2,12 +2,27 @@
 
 
 {% block body %}
+	<div class="col-xs-6 col-xs-offset-3">
+		<ol class="breadcrumb">
+	  		<li><a id="fil" href="{{ path('homepage') }}">Accueil</a></li>
+	  		<li><a id="fil" href="{{ path('séries') }}">Séries</a></li>
+	  		<li><a id="fil" href="">Saison</a></li>
+	  		<li class="active">Episode</li>
+		</ol>
+	</div>
+<div class="row" >
+		<div class="col-xs-3 col-xs-offset-3">
+			<h3>{{ episodes.nomEpisode }}</h3>
+		</div>
+</div>
 <div class="row">
-	<div class="col-xs-12 col-xs-offset-4">
-	   <ul>
-	   			<h3>{{ episodes.nomEpisode }}</h3>
-	   			<img src="{{ episodes.posterEpisode }}" alt="poster">
-	   </ul>
+	<div class="col-xs-3 col-xs-offset-3">
+	   		<img  id="imagesaison" src="{{ episodes.posterEpisode }}" alt="poster">
 	</div>	
+</div>
+<div class="row">
+	<div class="col-xs-6 col-xs-offset-3">
+		<p id="resume" class="text-justify">{{ episodes.resumeEpisode }}</p>	
+	</div>
 </div>
 {% endblock %}

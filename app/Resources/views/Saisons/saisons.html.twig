@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+	<div class="col-xs-6 col-xs-offset-3">
+		<ol class="breadcrumb">
+	  		<li><a id="fil" href="{{ path('homepage') }}">Accueil</a></li>
+	  		<li><a id="fil" href="{{ path('séries')}}">Séries</a></li>
+	  		<li class="active" >Saison</li>
+		</ol>
+	</div>
+	<div class="row" >
+		<div class="col-xs-3 col-xs-offset-3">
+			<h3>{{ saisons.numeroSaisons }}</h3>
+		</div>
+		
+	</div>
+<div class="row">
+		<div class="col-xs-3 col-xs-offset-3">
+	   			<img id="imagesaison" src="{{ saisons.posterSaisons }}" alt="poster">
+		</div>
+	<div class="col-xs-3 col-xs-offset-1">
+			{% for saison in saisons.episodes %}
+				<a id="episodeslink" href="{{ path('episode', { 'id' : saison.id})}}"><p>{{ saison.numeroEpisode}}</p></a>
+			{% endfor %}
+	</div>	
+</div>
+<div class="row">
+	<div class="col-xs-6 col-xs-offset-3">
+		<p id="resume" class="text-justify">{{ saisons.resumeSaisons }}</p>	
+	</div>
+</div>
+{% endblock %}

@@ -1,6 +1,19 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
+{% if is_granted("ROLE_SUPER_ADMIN") %}
+	<div class="col-xs-4 col-xs-offset-4">
+		<a id="linkadmin" href="{{ path ('admin') }}"><p>Espace Super Admin</p></a>
+	</div>
+	<div class="col-xs-4 col-xs-offset-4">
+		<p>{{ 'Pseudo'|trans }}: {{ user.username }}</p>
+		<p>{{ 'Email'|trans }}: {{ user.email }}</p>
+	</div>
+{% else %}
 <div class="col-xs-4 col-xs-offset-4">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+	<p>{{ 'Pseudo'|trans }}: {{ user.username }}</p>
+	<p>{{ 'Email'|trans }}: {{ user.email }}</p>
 </div>
+{% endif %}
+
+
+

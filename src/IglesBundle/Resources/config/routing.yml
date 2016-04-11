@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 igles_promote_user:
     path:    /promote/{id}
     defaults: { _controller: IglesBundle:Admin:promoteUser, id: 1 }
@@ -8,10 +7,13 @@ igles_promote_user:
 igles_select_serie:
     path:    /series/{id}
     defaults: { _controller: IglesBundle:Series:select, id: 1 }
-=======
+
 igles_select_episode:
     path:    /episode/{id}
     defaults: { _controller: IglesBundle:Episode:select, id: 1 }
->>>>>>> master
     requirements:
         id: /d+
+
+igles_saison:
+    path:    /saison/
+    defaults: { _controller: IglesBundle:Saison:index}

@@ -49,6 +49,13 @@ class Series
      */
     private $episode;
 
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="Saison", mappedBy="serie", cascade={"remove"})
+     */
+    private $saisons;
+
 
     /**
      * Get id
@@ -130,25 +137,27 @@ class Series
     }
 
     /**
-     * Set episode
+     * Set saisons
      *
-     * @param string $episode
+     * @param string $saisons
      * @return Series
      */
-    public function setEpisode($episode)
+    public function setSaisons($saisons)
     {
-        $this->episode = $episode;
+        $this->saisons = $saisons;
 
         return $this;
     }
 
     /**
-     * Get episode
+     * Get saisons
      *
      * @return string 
      */
-    public function getEpisode()
+    public function getSaisons()
     {
-        return $this->episode;
+        return $this->saisons;
     }
-}
+}  
+
+  
