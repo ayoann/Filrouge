@@ -1,35 +1,6 @@
 {% extends '::base.html.twig'%}
 
 {% block body %}
-<<<<<<< HEAD
-<div class="col-xs-6 col-xs-offset-3">
-		<ol class="breadcrumb">
-	  		<li><a id="fil" href="{{ path('fos_user_profile_show') }}">Profile</a></li>
-	  		<li class="Admin" >Série</li>
-		</ol>
-	</div>
-<div class="row"><h1 class="col-xs-4 col-xs-offset-4">Liste des membres</h1></div>
-			
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Nom utilisateur</th>
-						<th>Groupe</th>
-						<th>Promote</th>
-						<th>Bannir</th>
-					</tr>
-				</thead>
-				{% for user in users %}
-				<tbody>
-					<tr>
-						<td>{{ user.username|e }} </td>
-						<td>{% for role in user.roles%}
-								<ul>
-									<li>{{ role }}</li>
-								</ul> 
-							{% endfor %}</td>
-						<td><a href="{{ path('igles_promote_user', { 'id': user.id }) }}"><input 
-=======
 	<div class="row"><h1 class="col-xs-4 col-xs-offset-4">Liste des membres</h1></div>
 		<table class="table table-striped">
 			<thead>
@@ -57,7 +28,6 @@
 					{% elseif "ROLE_USER" in user.roles %}
 
 						<td><a href="{{ path('igles_promote_user', { 'id': user.id }) }}"><input
->>>>>>> 7768de3c8286b7b1a2f88b8678312dbfbef2d6ed
 						class="btn btn-success" class="btn btn-default" type="submit" value="Promote"></a></td>
 
 					{% endif %}

@@ -21,8 +21,13 @@
 			</div>
 		    <input class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Log In'|trans }}" />
 		</form>
-		<a class="col-xs-2 col-xs-offset-3" href="{{ path('fos_user_registration_register')}}"><input id="signin" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="Sign In" /></a>
 		<a id="motdepasse" class="col-xs-8" href="{{path('fos_user_resetting_request')}}">Mot de passe oublié</a>
+	</div>
+	<div id="SignIn" class="col-xs-2 col-xs-offset-1">
+		<h3 class="col-xs-12">Vous n'avez pas de compte ?</h3>
+		<p class="col-xs-12">Inscrivez-vous dès maintenant, et profitez de l'expérience Watch !</p>
+		<a class="col-xs-2" href="{{ path('fos_user_registration_register')}}">
+		<input id="signin" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="Sign In" /></a>
 	</div>
 
 {% endblock fos_user_content %}
