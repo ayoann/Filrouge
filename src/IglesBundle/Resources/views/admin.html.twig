@@ -21,8 +21,18 @@
 									<li>{{ role }}</li>
 								</ul> 
 							{% endfor %}</td>
-						<td><a href="{{ path('igles_promote_user', { 'id': user.id }) }}"><input 
-						class="btn btn-success" class="btn btn-default" type="submit" value="Promote"></a></td>
+						{% if "ROLE_ADMIN" in user.roles %}
+ 
+						    <td><a href="{{ path('igles_demote_user', { 'id': user.id }) }}"><input
+						    class="btn btn-success" class="btn btn-default" type="submit" value="Demote"></a></td>
+						  
+						{% elseif "ROLE_USER" in user.roles %}
+						 
+						    <td><a href="{{ path('igles_promote_user', { 'id': user.id }) }}"><input
+						    class="btn btn-success" class="btn btn-default" type="submit" value="Promote"></a></td>
+						      
+						{% endif %}
+
 						
 						<td>{% if user.enabled == 1 %}
 					<a href="{{ path('igles_ban_user', { 'id': user.id }) }}"><input class="btn btn-danger" type="submit" value="Ban"></a>
