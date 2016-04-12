@@ -10,27 +10,36 @@
     </head>
     <body>
         <header>
+        
+        </header>
+        <div class="container-fluid">
             <div class="row">
-                <nav class="col-xs-6 col-xs-offset-3">
-                    <a href="{{ path('homepage') }}"><div id="Accueil"class="col-xs-2 text-center">Accueil</div></a>
-                    <a href="{{ path('news') }}"><div id="News"class="col-xs-2 text-center">News</div> 
-                    <a href="{{ path('séries') }}"><div id="Series" class="col-xs-2 text-center">Séries</div> </a>
-                    <div id="programmes" class="col-xs-4 text-center">Programmes séries</div>
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <a href="{{ path('fos_user_profile_show') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
-                    {% else %}
-                    <a href="{{ path('fos_user_security_login') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
-                    {% endif %}
+                <nav class="col-xs-12 ">
+                    <div class="container">
+                        <a href="{{ path('homepage') }}"><div id="Accueil"class="col-xs-2 text-center">Accueil</div></a>
+                        <a href="{{ path('news') }}"><div id="News"class="col-xs-2 text-center">News</div> 
+                        <a href="{{ path('séries') }}"><div id="Series" class="col-xs-2 text-center">Séries</div> </a>
+                        <a href="#"><div id="programmes" class="col-xs-4 text-center">Programmes séries</div></a>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a href="{{ path('fos_user_profile_show') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
+                        {% else %}
+                        <a href="{{ path('fos_user_security_login') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
+                        {% endif %}
+                    </div>
                 </nav>
             </div>
-        </header>
-
-        
-        {% block body %}{% endblock %}
-        <div class="row">
-            <footer class="text-center">
-                <p>Copyright Igles</p>
-            </footer>
         </div>
+        {% block body %}
+
+        {% endblock %}
+        <!-- <div class="container-fluid">
+            <div class="row">
+                <footer class="text-center">
+                    <p>Copyright Igles</p>
+                </footer>
+            </div>
+        </div> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>
 </html>

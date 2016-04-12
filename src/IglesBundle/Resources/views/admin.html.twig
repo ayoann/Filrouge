@@ -1,6 +1,12 @@
 {% extends '::base.html.twig'%}
 
 {% block body %}
+<div class="col-xs-6 col-xs-offset-3">
+		<ol class="breadcrumb">
+	  		<li><a id="fil" href="{{ path('fos_user_profile_show') }}">Profile</a></li>
+	  		<li class="Admin" >Série</li>
+		</ol>
+	</div>
 <div class="row"><h1 class="col-xs-4 col-xs-offset-4">Liste des membres</h1></div>
 			
 			<table class="table table-striped">
