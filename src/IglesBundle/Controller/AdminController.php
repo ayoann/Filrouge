@@ -28,7 +28,7 @@ class AdminController extends Controller
  
         $em->persist($user);
         $em->flush();
-        return $this->render('IglesBundle::index.html.twig');
+        return $this->redirect($this->generateUrl('admin'));
     }
 
     /**
@@ -41,7 +41,7 @@ class AdminController extends Controller
  
         $em->persist($user);
         $em->flush();
-        return $this->render('IglesBundle::index.html.twig');
+        return $this->redirect($this->generateUrl('admin'));
     }
 
     /**
@@ -54,7 +54,7 @@ class AdminController extends Controller
  
         $em->persist($user);
         $em->flush();
-        return $this->render('IglesBundle::index.html.twig');
+        return $this->redirect($this->generateUrl('admin'));
     }
 
 
@@ -68,7 +68,7 @@ class AdminController extends Controller
  
         $em->persist($user);
         $em->flush();
-        return $this->render('IglesBundle::index.html.twig');
+        return $this->redirect($this->generateUrl('admin'));
     }
 
     public function __toString()
