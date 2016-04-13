@@ -10,7 +10,9 @@
     </head>
     <body>
         <header>
-        
+            <a class="col-xs-1 col-xs-offset-9" href="{{ path('fos_user_security_login')}}"><input id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Connexion'|trans }}" /></a>
+            <a class="col-xs-2" href="{{ path('fos_user_registration_register')}}">
+            <input id="signin" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="Créer un compte" /></a>
         </header>
         <div class="container-fluid">
             <div class="row">
