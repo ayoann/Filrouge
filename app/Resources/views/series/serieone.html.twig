@@ -19,7 +19,7 @@
 		<div class="col-xs-3 col-xs-offset-1">
 				<img id="imagesaison" src="{{ series.posterSerie }}" alt="poster">
 		</div>	
-		<div class="col-xs-2 col-xs-offset-4 text-center">
+		<div class="col-xs-2 col-xs-offset-1 text-center">
 			<div id="divsaison">
 				{% for serie in series.saisons %}
 					<a id="saisons" href="{{ path('saisonone', { 'id' : serie.id})}}"><p>{{ serie.numeroSaisons }}</p></a>

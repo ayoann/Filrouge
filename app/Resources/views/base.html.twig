@@ -10,23 +10,28 @@
     </head>
     <body>
         <header>
-            <a class="col-xs-1 col-xs-offset-9" href="{{ path('fos_user_security_login')}}"><input id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Connexion'|trans }}" /></a>
-            <a class="col-xs-2" href="{{ path('fos_user_registration_register')}}">
-            <input id="signin" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="Créer un compte" /></a>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                 <a class="col-xs-1 col-xs-offset-10" href="{{ path('fos_user_profile_show')}}"><input id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Bienvenue'|trans}}" /></a>
+
+            {% else %}
+                <a class="col-xs-1 col-xs-offset-9" href="{{ path('fos_user_security_login')}}"><input id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Connexion'|trans }}" /></a>
+                <a class="col-xs-2" href="{{ path('fos_user_registration_register')}}">
+                <input id="signin" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="Créer un compte" /></a>
+            {% endif %}
         </header>
         <div class="container-fluid">
             <div class="row">
                 <nav class="col-xs-12 ">
                     <div class="container">
                         <a href="{{ path('homepage') }}"><div id="Accueil"class="col-xs-2 text-center">Accueil</div></a>
-                        <a href="{{ path('news') }}"><div id="News"class="col-xs-2 text-center">News</div> 
-                        <a href="{{ path('séries') }}"><div id="Series" class="col-xs-2 text-center">Séries</div> </a>
-                        <a href="#"><div id="programmes" class="col-xs-4 text-center">Programmes séries</div></a>
+                        <a href="{{ path('séries') }}"><div id="News"class="col-xs-2 text-center">Séries</div> 
+                        <a href="#"><div id="Series" class="col-xs-4 text-center">Programmes Séries</div> </a>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <a href="{{ path('fos_user_profile_show') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
                         {% else %}
                         <a href="{{ path('fos_user_security_login') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
                         {% endif %}
+                        <a href="#"><div id="programmes" class="col-xs-2 text-center">Forum</div></a>
                     </div>
                 </nav>
             </div>

@@ -23,6 +23,32 @@ class Users extends BaseUser
     protected $id;
 
     /**
+     * @var string
+     * @ORM\Column(name="lastName", type="string")
+     * 
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $lastName;
+
+    /**
+     * @var string
+     * @ORM\Column(name="firstName", type="string")
+     * 
+     * @ORM\GeneratedValue(strategy="AUTO")
+     *
+     */
+    protected $firstName;
+
+    /**
+     * @var datetime
+     * @ORM\Column(name="birthday", type="datetime")
+     * 
+     * @ORM\GeneratedValue(strategy="AUTO")
+     *
+     */
+    protected $birthday;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -30,6 +56,43 @@ class Users extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getlastName()
+    {
+        return $this->lastName;
+    }
+
+    public function getfirstName()
+    {
+        return $this->firstName;
+    }
+
+    public function getbirthday()
+    {
+        return $this->birthday;
+    }
+
+    
+    public function setlastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function setfirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function setbirthday($birthday)
+    {
+        $this->birthday = $birthday;
+
+        return $this;
     }
 
     public function __construct()
