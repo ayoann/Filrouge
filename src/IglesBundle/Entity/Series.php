@@ -42,12 +42,7 @@ class Series
      */
     private $resumeSerie;
 
-    /**
-     * @var string
-     *
-     * @ORM\OneToMany(targetEntity="Episodes", mappedBy="serie", cascade={"remove"})
-     */
-    private $episode;
+ 
 
     /**
      * @var string

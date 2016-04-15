@@ -17,3 +17,7 @@ igles_select_episode:
 igles_saison:
     path:    /saison/
     defaults: { _controller: IglesBundle:Saison:index}
+
+igles_delete_serie:
+    path:    /delete/{id}
+    defaults: { _controller: IglesBundle:Series:delete, id: 1 }
