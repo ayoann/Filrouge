@@ -13,15 +13,27 @@ use Doctrine\ORM\EntityRepository;
 class SeriesRepository extends EntityRepository
 {
 	
+	public function getSeries()
+	{
+		$query = $this->_em->createQuery(
+    		'SELECT s
+    		FROM IglesBundle:Series s
+    		ORDER BY s.nomSerie ASC' );
+		
+		return $query->getResult();
+		
+	}
+
 	public function getSaisons()
 	{
-		$query = $em->createQuery(
-    		'SELECT s, a
+		$query = $this->_em->createQuery(
+    		'SELECT s, e
     		FROM IglesBundle:Series s
-    		INNER JOIN s.saison a');
+    		INNER JOIN s.saisons e
+    		ORDER BY e.numeroSaisons ASC' );
 		
-		$series = $query->getResult();
+		return $query->getResult();
 		
-		return $series;
 	}
 }
+

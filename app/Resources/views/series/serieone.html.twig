@@ -6,11 +6,12 @@
 		<ol class="breadcrumb">
 	  		<li><a id="fil" href="{{ path('homepage') }}">Accueil</a></li>
 	  		<li><a id="fil" href="{{ path('séries') }}">Séries</a></li>
-	  		<li class="active" >Saison</li>
+	  		<li class="active" >Serie</li>
 		</ol>
 	</div>
 
 		<div class="row">
+		<a class="col-xs-1 col-xs-offset-10" href="{{ path('serie_delete', { 'id' : series.id})}}"><<button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Supprimer'}}" />Supprimer</button></a>
 			<div class="col-xs-5 col-xs-offset-1">
 				<h2>{{ series.nomSerie }}</h2></a>
 			</div>
