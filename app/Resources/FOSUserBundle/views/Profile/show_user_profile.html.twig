@@ -1,0 +1,28 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+	{% block fos_user_content %}
+
+<div class="row">
+	<div id="profile" class="col-xs-2 col-xs-offset-8">
+		<img src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png">
+		<p>{{ 'Nom'|trans }}: {{ user.lastName }}</p>
+		<p>{{ 'Prénom'|trans }}: {{ user.firstName }}</p>
+		<p>{{ 'Pseudo'|trans }}: {{ user.username }}</p>
+		<p>{{ 'Email'|trans }}: {{ user.email }}</p>
+	</div>
+</div>
+
+<div>
+
+	{% for user in users %}
+
+		<li><a href="{{ path('fos_user_profile_user', { 'id': user.id }) }}">{{ user.username }}</a></li>
+
+	{% endfor %}
+
+</div>
+
+
+
+
+{% endblock fos_user_content %}
