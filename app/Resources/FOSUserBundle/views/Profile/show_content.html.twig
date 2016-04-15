@@ -9,9 +9,14 @@
 		<p>{{ 'Email'|trans }}: {{ user.email }}</p>
 	</div>
 {% else %}
-<div class="col-xs-4 col-xs-offset-4">
-	<p>{{ 'Pseudo'|trans }}: {{ user.username }}</p>
-	<p>{{ 'Email'|trans }}: {{ user.email }}</p>
+<div class="row">
+	<div id="profile" class="col-xs-2 col-xs-offset-8">
+		<img src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png">
+		<p>{{ 'Nom'|trans }}: {{ user.lastName }}</p>
+		<p>{{ 'Prénom'|trans }}: {{ user.firstName }}</p>
+		<p>{{ 'Pseudo'|trans }}: {{ user.username }}</p>
+		<p>{{ 'Email'|trans }}: {{ user.email }}</p>
+	</div>
 </div>
 {% endif %}
 

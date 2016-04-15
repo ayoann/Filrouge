@@ -1,9 +1,9 @@
 {% extends '::index.html.twig' %}
     {% block body %}
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <a id="linkdeconnexion" class="col-xs-3 col-xs-offset-8" href="{{ path('fos_user_security_logout') }}">
-                    {{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}
-                </a>
+                <!-- <a id="linkdeconnexion" class="col-xs-3 col-xs-offset-8" href="{{ path('fos_user_security_logout') }}">
+                    <input id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}" />
+                </a> -->
             {% endif %}
         </div>
 
