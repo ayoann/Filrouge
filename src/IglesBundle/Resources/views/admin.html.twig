@@ -14,7 +14,7 @@
 		{% for user in users %}
 			<tbody>
 				<tr>
-					<td>{{ user.username|e }} </td>
+					<td><a href="{{ path('fos_user_profile_user', { 'id': user.id }) }}">{{ user.username }}</a></td>
 					<td>{% for role in user.roles%}
 						<ul>
 							<li>{{ role }}</li>
