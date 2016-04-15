@@ -42,11 +42,7 @@ class Series
      */
     private $resumeSerie;
 
-<<<<<<< HEAD
- 
 
-=======
->>>>>>> 380408fc1f80407830d6b7e31094a70d86f571a3
     /**
      * @var string
      *
