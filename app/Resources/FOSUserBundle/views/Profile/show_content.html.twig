@@ -5,6 +5,9 @@
 		<a id="linkadmin" href="{{ path ('admin') }}"><p>Espace Super Admin</p></a>
 	</div>
 	<div class="col-xs-4 col-xs-offset-4">
+		<img src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png">
+		<p>{{ 'Nom'|trans }}: {{ user.lastName }}</p>
+		<p>{{ 'Prénom'|trans }}: {{ user.firstName }}</p>
 		<p>{{ 'Pseudo'|trans }}: {{ user.username }}</p>
 		<p>{{ 'Email'|trans }}: {{ user.email }}</p>
 	</div>
@@ -20,5 +23,19 @@
 </div>
 {% endif %}
 
+<<<<<<< HEAD
  
+=======
+
+	{% for user in users %}
+
+		<a href="{{ path('fos_user_profile_user', { 'id': user.id }) }}">{{ user.username }}</a>
+
+	{% endfor %}
+
+
+
+
+
+>>>>>>> 80f6003b5c402ac653e13737c99d1b0a6420b84d
 
