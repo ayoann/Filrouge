@@ -23,6 +23,17 @@ class Users extends BaseUser
     protected $id;
 
     /**
+     * @var string
+     */
+    protected $lastName;
+
+    /**
+     * @var string
+     *
+     */
+    protected $firstName;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -32,9 +43,35 @@ class Users extends BaseUser
         return $this->id;
     }
 
+    public function getlastName()
+    {
+        return $this->lastName;
+    }
+
+    public function getfirstName()
+    {
+        return $this->firstName;
+    }
+
+    
+    public function setlastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function setfirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
     public function __construct()
     {
         parent::__construct();
 
+    $this->roles = array('ROLE_USER'); // Ajoute le ROLE_USER par défaut lors de l'inscription au site
     }
 }

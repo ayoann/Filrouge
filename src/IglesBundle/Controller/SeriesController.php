@@ -21,18 +21,20 @@ class SeriesController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $series = $em->getRepository('IglesBundle:Series')->findAll();
+        $series = $em->getRepository('IglesBundle:Series')->getSeries();
 
         return $this->render('series/series.html.twig', array(
             'series' => $series,
         ));
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 380408fc1f80407830d6b7e31094a70d86f571a3
     /**
      * @Route("/series/{id}", name="sériesone")
      */
-
      public function selectAction($id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -40,6 +42,7 @@ class SeriesController extends Controller
         $series=$this->getDoctrine()->getRepository('IglesBundle:Series')
         ->find($id);
 
+<<<<<<< HEAD
                
         return $this->render('series/serieone.html.twig', 
             array('series' => $series));
@@ -95,6 +98,12 @@ class SeriesController extends Controller
           $em->flush();
            
         return $this->redirectToRoute('séries');
+=======
+        $saisons = $em->getRepository('IglesBundle:Series')->getSaisons();
+
+        return $this->render('series/serieone.html.twig', 
+            array('series' => $series, "saisons" => $saisons));
+>>>>>>> 380408fc1f80407830d6b7e31094a70d86f571a3
     }
 
     /**
