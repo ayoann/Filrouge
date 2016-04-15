@@ -14,13 +14,26 @@ class SaisonRepository extends EntityRepository
 {
 	public function getEpisodes()
 	{
-		$query = $em->createQuery(
+		$query = $this->_em->createQuery(
     		'SELECT s, e
     		FROM IglesBundle:Saison s
-    		INNER JOIN s.episode e');
+    		INNER JOIN s.episodes e
+    		ORDER BY e.numeroEpisode ASC' );
 		
-		$saisons = $query->getResult();
+		return $query->getResult();
 		
-		return $saisons;
+	}
+
+	public function getSaisons()
+	{
+		$query = $this->_em->createQuery(
+    		'SELECT s, e
+    		FROM IglesBundle:Saison s
+    		INNER JOIN s.serie e
+    		ORDER BY s.numeroSaisons ASC' );
+		
+		return $query->getResult();
+		
 	}
 }
+

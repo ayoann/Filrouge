@@ -45,13 +45,6 @@ class Series
     /**
      * @var string
      *
-     * @ORM\OneToMany(targetEntity="Episodes", mappedBy="serie", cascade={"remove"})
-     */
-    private $episode;
-
-    /**
-     * @var string
-     *
      * @ORM\OneToMany(targetEntity="Saison", mappedBy="serie", cascade={"remove"})
      */
     private $saisons;
