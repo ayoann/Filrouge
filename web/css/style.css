@@ -160,7 +160,6 @@ img{
 }
 #connexion{
 	margin-top: 20px;
-	margin-left: 20px;
 }
 #admin{
 	margin-top: 20px;
@@ -170,7 +169,14 @@ img{
 }
 #signin{
 	margin-top: 20px;
-	margin-left: 30px;
+}
+#creercompte, #deconnexion{
+	margin-top: 20px;
+	margin-left: 10px;
+}
+#deconnexion{
+	margin-top: 20px;
+	margin-left: 20px;
 }
 #motdepasse{
 	margin-top: 20px;
