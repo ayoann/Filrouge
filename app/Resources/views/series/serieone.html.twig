@@ -6,7 +6,7 @@
 		<ol class="breadcrumb">
 	  		<li><a id="fil" href="{{ path('homepage') }}">Accueil</a></li>
 	  		<li><a id="fil" href="{{ path('séries') }}">Séries</a></li>
-	  		<li class="active" >Serie</li>
+	  		<li class="active" >{{ series.nomSerie }}</li>
 		</ol>
 	</div>
 	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
