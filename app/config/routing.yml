@@ -12,4 +12,3 @@ igles_admin:
 
 igles:
     resource: "@IglesBundle/Resources/config/routing.yml"
-

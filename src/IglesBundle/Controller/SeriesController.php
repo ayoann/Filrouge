@@ -38,7 +38,12 @@ class SeriesController extends Controller
         $series=$this->getDoctrine()->getRepository('IglesBundle:Series')
         ->find($id);
 
+
         $saisons = $em->getRepository('IglesBundle:Series')->getSaisons();
+
+
+
+               
 
         return $this->render('series/serieone.html.twig', 
             array('series' => $series, "saisons" => $saisons));
