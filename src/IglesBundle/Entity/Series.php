@@ -50,6 +50,13 @@ class Series
      */
     private $saisons;
 
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="serie", cascade={"remove"})
+     */
+    private $commentaire_serie;
+
 
     /**
      * Get id

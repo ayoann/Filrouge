@@ -12,3 +12,9 @@ igles_admin:
 
 igles:
     resource: "@IglesBundle/Resources/config/routing.yml"
+
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /api
+    defaults: { _format: html }
