@@ -256,4 +256,6 @@ class Series
     {
         $this->saisons->removeElement($saisons);
     }
+
+    
 }

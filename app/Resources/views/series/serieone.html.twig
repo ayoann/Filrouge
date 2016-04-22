@@ -1,5 +1,6 @@
 {% extends '::base.html.twig' %}
 {% block body %}
+<<<<<<< HEAD
     <div class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-4 col-lg-offset-1">
         <ol class="breadcrumb">
             <li><a id="fil" href="{{ path('homepage') }}">Accueil</a></li>
@@ -37,4 +38,43 @@
         </div>
     </div>
     {% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': series.id} %}
+=======
+	<div class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-4 col-lg-offset-1">
+		<ol class="breadcrumb">
+	  		<li><a id="fil" href="{{ path('homepage') }}">Accueil</a></li>
+	  		<li><a id="fil" href="{{ path('séries') }}">Séries</a></li>
+	  		<li class="active" >{{ series.nomSerie }}</li>
+		</ol>
+	</div>
+	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+	<a class="col-xs-1 col-xs-offset-10" href="{{ path('serie_update', { 'id' : series.id})}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ ' Modifier'}}" /> Modifier </button></a>
+	<a class="col-xs-1 col-xs-offset-10 col-sm-1 col-sm-offset-9 col-lg-1 col-lg-offset-8" href="{{ path('serie_delete', { 'id' : series.id})}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Supprimer'}}" />Supprimer</button></a>	
+	{% endif %}
+	<div class="row">
+			<div class="col-xs-5 col-xs-offset-1 col-lg-7 col-lg-offset-1">
+				<h2>{{ series.nomSerie }}</h2></a>
+			</div>
+		</div>
+	<div class="row">
+		<div class="col-xs-3 col-xs-offset-1 col-lg-2 col-lg-offset-1">
+				<img id="imagesaison" src="{{ series.posterSerie }}" alt="poster">
+		</div>	
+		<div class="col-xs-2 col-xs-offset-1 col-lg-2 text-center">
+			<div id="divsaison">
+				{% for serie in series.saisons %}
+					<a id="saisons" href="{{ path('saisonone', { 'id' : serie.id})}}"><p>{{ serie.numeroSaisons }}</p></a>
+				{% endfor %}
+			</div>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1 col-lg-10 col-lg-offset-1 text-justify">
+			<div id="divresume">
+				<h3>Synopsis :</h3>
+				<p id="resume" class="text-justify">{{ series.resumeSerie }}</p>
+			</div>	
+		</div>
+	</div>
+	{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': series.id} %}
+>>>>>>> 7a69957a2a3c4eb23467551573ddd91f7e9eec6b
 {% endblock %}
