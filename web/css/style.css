@@ -105,6 +105,10 @@ a:hover{
 	padding-top: 10px;
 	background-color: #686868;
 }
+#espacemembres{
+	margin-top: 20px;
+	margin-right: 50px;
+}
 
 form{
 	margin-top: 25px;
@@ -126,6 +130,7 @@ img{
 	border-bottom-left-radius: 3% 4%;
 	padding-bottom: 15px;
 	color:white;
+
 }
 #SignIn{
 	margin-top: 65px;
@@ -164,15 +169,15 @@ img{
 #admin{
 	margin-top: 20px;
 }
-#signin:hover{
+#signin:hover, #creercompte:hover{
 	background-color: rgb(253, 181, 21);
 }
 #signin{
 	margin-top: 20px;
 }
-#creercompte, #deconnexion{
+#creercompte{
 	margin-top: 20px;
-	margin-left: 10px;
+	margin-left: 3px;
 }
 #deconnexion{
 	margin-top: 20px;
