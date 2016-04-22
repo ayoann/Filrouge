@@ -25,4 +25,5 @@
 		<p id="resume" class="text-justify">{{ episodes.resumeEpisode }}</p>	
 	</div>
 </div>
+{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': episodes.id} %}
 {% endblock %}
