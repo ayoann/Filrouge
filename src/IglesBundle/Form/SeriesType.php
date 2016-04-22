@@ -16,16 +16,15 @@ class SeriesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-<<<<<<< HEAD
+
             ->add('nomSerie')
             ->add('posterSerie')
             ->add('resumeSerie')
             
-=======
             ->add('nomSerie', null, array('label' => 'Nom Série', 'translation_domain' => 'IglesBundle'))
             ->add('posterSerie', null, array('label' => "Image Série", 'translation_domain' => 'IglesBundle'))
             ->add('resumeSerie', null, array('label' => "Résumé Série", "translation_domain" => "IglesBundle"))        
->>>>>>> 7a69957a2a3c4eb23467551573ddd91f7e9eec6b
+
         ;
     }
     
