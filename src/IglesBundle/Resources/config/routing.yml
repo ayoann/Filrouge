@@ -21,9 +21,12 @@ igles_saison:
 igles_delete_serie:
     path:    /delete/{id}
     defaults: { _controller: IglesBundle:Series:delete, id: 1 }
+<<<<<<< HEAD
+=======
 
 fos_comment_api:
     type: rest
     resource: "@FOSCommentBundle/Resources/config/routing.yml"
     prefix: /api
     defaults: { _format: html }
+>>>>>>> 7986503c98cf69ee163e9151b6f083dd97d82db2

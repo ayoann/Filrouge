@@ -28,6 +28,7 @@ class SeriesController extends Controller
     }
 
     /**
+     * Select série.
      * @Route("/series/{id}", name="sériesone")
      */
      public function selectAction($id)
@@ -37,12 +38,7 @@ class SeriesController extends Controller
         $series=$this->getDoctrine()->getRepository('IglesBundle:Series')
         ->find($id);
 
-
         $saisons = $em->getRepository('IglesBundle:Series')->getSaisons();
-
-
-
-               
 
         return $this->render('series/serieone.html.twig', 
             array('series' => $series, "saisons" => $saisons));
