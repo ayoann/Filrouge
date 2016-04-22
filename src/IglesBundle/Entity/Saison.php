@@ -200,4 +200,9 @@ class Saison
         return $this->episodes;
     }
 
+    public function __toString()
+    {
+    return $this->getPosterSaisons();
     }
+}
+
