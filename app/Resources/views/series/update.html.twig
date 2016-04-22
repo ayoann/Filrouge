@@ -11,17 +11,19 @@
     </div>
     <a class="col-xs-1 col-xs-offset-4" href="{{ path('séries')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}" />Revenir à la liste</button></a>
 </div>
-<div class="row">
-        
+<div class="row">        
 </div>
 <div class="row">
             <div class="col-xs-6 col-xs-offset-4">
                  <h1>Series</h1>
                 {{ form_start(update_form) }}
                     {{ form_widget(update_form) }}
-                    <a class="col-xs-1 col-xs-offset-2" href="{{ path('séries')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}" />Valider</button></a>
+                    <a class="col-xs-1 col-xs-offset-2" href="{{ path('séries')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
                 {{ form_end(update_form) }}
             </div>
 </div>
+
+
+        <a class="col-xs-1 col-xs-offset-4" href="{{ path('séries')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Revenir à la liste</button></a>
 {% endblock %}
                 
