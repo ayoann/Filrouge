@@ -11,27 +11,32 @@
     <body>
         <header>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                 <a class="col-xs-1 col-xs-offset-10" href="{{ path('fos_user_security_logout') }}"><input id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}" /></a>
-
-            {% else %}
-                <a class="col-xs-1 col-xs-offset-9" href="{{ path('fos_user_security_login')}}"><input id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Connexion'|trans }}" /></a>
-                <a class="col-xs-2" href="{{ path('fos_user_registration_register')}}">
-                <input id="signin" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="Créer un compte" /></a>
+            {% if is_granted("ROLE_SUPER_ADMIN") %}
+            <div class="row">
+                <a class="col-xs-1 col-lg-1 col-xs-offset-8 col-lg-offset-9" href="{{ path ('admin') }}"><input id="admin" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Espace Admin'|trans({}, 'FOSUserBundle') }}" /></a>
             {% endif %}
+                 <a class="col-xs-2 col-sm-2 col-lg-2" href="{{ path('fos_user_security_logout') }}"><input id="deconnexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}" /></a>
+            </div>
+            {% else %}
+                <a class="col-xs-1 col-xs-offset-8 col-lg-1 col-lg-offset-9" href="{{ path('fos_user_security_login')}}"><input id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Connexion'|trans }}" /></a>
+                <a class="col-xs-2 col-lg-1 " href="{{ path('fos_user_registration_register')}}">
+                <input id="creercompte" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="Créer un compte" /></a>
+            {% endif %}
+
         </header>
         <div class="container-fluid">
             <div class="row">
-                <nav class="col-xs-12 ">
+                <nav class="col-xs-12 col-sm-12 col-md-12">
                     <div class="container">
-                        <a href="{{ path('homepage') }}"><div id="Accueil"class="col-xs-2 text-center">Accueil</div></a>
+                        <a href="{{ path('homepage') }}"><div id="Accueil" class="col-xs-2 text-center">Accueil</div></a>
                         <a href="{{ path('séries') }}"><div id="News"class="col-xs-2 text-center">Séries</div> 
-                        <a href="#"><div id="Series" class="col-xs-4 text-center">Programmes Séries</div> </a>
+                        <a href="#"><div id="Series" class="col-xs-3 text-center">Programmes Séries</div> </a>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <a href="{{ path('fos_user_profile_show') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
                         {% else %}
                         <a href="{{ path('fos_user_security_login') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
                         {% endif %}
-                        <a href="#"><div id="programmes" class="col-xs-2 text-center">Forum</div></a>
+                        <a href="#"><div id="programmes" class="col-xs-3 text-center">Forum</div></a>
                     </div>
                 </nav>
             </div>

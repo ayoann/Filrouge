@@ -74,10 +74,10 @@ table{
 }
 a{
 	text-decoration: none;
-	color:white;
+	color:black;
 }
 a:hover{
-	color:white;
+	color:black;
 }
 #Accueil:hover{
 	background-color: rgb(78, 185, 198);
@@ -94,12 +94,7 @@ a:hover{
 #Membres:hover{
 	background-color: rgb(93, 188, 118);
 }
-#Accueil{
-	height: 40px;
-	padding-top: 10px;
-	background-color: #686868;
-}
-#News, #Series, #programmes, #Forum{
+#Accueil, #News, #Series, #programmes, #Forum{
 	height: 40px;
 	padding-top: 10px;
 	background-color: #686868;
@@ -110,6 +105,7 @@ a:hover{
 	padding-top: 10px;
 	background-color: #686868;
 }
+
 form{
 	margin-top: 25px;
 }
@@ -165,11 +161,22 @@ img{
 #connexion{
 	margin-top: 20px;
 }
+#admin{
+	margin-top: 20px;
+}
 #signin:hover{
 	background-color: rgb(253, 181, 21);
 }
 #signin{
 	margin-top: 20px;
+}
+#creercompte, #deconnexion{
+	margin-top: 20px;
+	margin-left: 10px;
+}
+#deconnexion{
+	margin-top: 20px;
+	margin-left: 20px;
 }
 #motdepasse{
 	margin-top: 20px;
@@ -188,7 +195,23 @@ img{
 }
 #profile{
 	background-color: white;
+	color: black;
+	margin-top: 30px;
 }
+#user{
+	background-color: white;
+	color:black;
+	margin-top: -200px;
+}
+#profile:hover{
+	text-decoration: none;
+	color: black;
+}
+#meserror{
+	margin-top: 30px;
+	background-color: red;
+}
+
 /*footer{
 	height: 40px;
 	margin-top: 200px;

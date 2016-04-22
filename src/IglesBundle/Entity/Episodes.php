@@ -45,7 +45,7 @@ class Episodes
     /**
      * @var string
      *
-     * @ORM\Column(name="numero_episode", type="string", length=255)
+     * @ORM\Column(name="numero_episode", type="text")
      */
     private $numeroEpisode;
 

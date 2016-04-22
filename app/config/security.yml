@@ -37,3 +37,4 @@ security:
         - { path: ^/resetting, role: ROLE_USER }
         - { path: ^/profile/, role: ROLE_USER }
         - { path: ^/admin, role: ROLE_ADMIN }
+        - { path: ^/delete, role: ROLE_ADMIN }

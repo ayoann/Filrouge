@@ -38,7 +38,7 @@ class Series
     /**
      * @var string
      *
-     * @ORM\Column(name="resume_serie", type="string", length=255)
+     * @ORM\Column(name="resume_serie", type="text")
      */
     private $resumeSerie;
 
