@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use IglesBundle\Entity\Series;
-
 use Symfony\Component\HttpFoundation\Response;
 
 class SeriesController extends Controller
@@ -53,8 +52,8 @@ class SeriesController extends Controller
      */
     public function newAction(Request $request)
     {
-        $serie = new Serie();
-        $form = $this->createForm('IglesBundle\Form\SerieType', $serie);
+        $serie = new Series();
+        $form = $this->createForm('IglesBundle\Form\SeriesType', $serie);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -62,14 +61,44 @@ class SeriesController extends Controller
             $em->persist($serie);
             $em->flush();
 
-            return $this->redirectToRoute('serie_show', array('id' => $serie->getId()));
+            return $this->redirectToRoute('séries');
         }
 
-        return $this->render('serie/new.html.twig', array(
-            'serie' => $serie,
+        return $this->render('series/new.html.twig', array(
+            'series' => $serie,
             'form' => $form->createView(),
         ));
     }
+
+/**
+     * Updates a Serie entity.
+     *
+     * @Route("/update/{id}", name="serie_update")
+     */
+
+   
+
+    public function updateAction(Request $request, Series $series)
+    {
+        $deleteForm = $this->createDeleteForm($series);
+        $updateForm = $this->createForm('IglesBundle\Form\SeriesType', $series);
+        $updateForm->handleRequest($request);
+
+        if ($updateForm->isSubmitted() && $updateForm->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($series);
+            $em->flush();
+
+            return $this->redirectToRoute('séries');
+        }
+
+        return $this->render('series/update.html.twig', array(
+            'series' => $series,
+            'update_form' => $updateForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
 
     
     /**

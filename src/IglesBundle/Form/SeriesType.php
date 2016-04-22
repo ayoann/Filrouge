@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 
-class SerieType extends AbstractType
+class SeriesType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -19,7 +19,6 @@ class SerieType extends AbstractType
             ->add('nomSerie')
             ->add('posterSerie')
             ->add('resumeSerie')
-            ->add('episode')
             ->add('saisons')
             
         ;
@@ -31,7 +30,7 @@ class SerieType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'IglesBundle\Entity\Serie'
+            'data_class' => 'IglesBundle\Entity\Series'
         ));
     }
 }
