@@ -78,6 +78,7 @@ fos_comment:
         model:
             comment: IglesBundle\Entity\Comment
             thread: IglesBundle\Entity\Thread
+            vote: IglesBundle\Entity\Vote
 
 assetic:
     bundles: [ "FOSCommentBundle" ]
