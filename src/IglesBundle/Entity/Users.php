@@ -24,15 +24,6 @@ class Users extends BaseUser
 
     /**
      * @var string
-     * @ORM\Column(name="comments", type="string")
-     * 
-     * @ORM\OneToMany(targetEntity="Comment", mappedBy="users", cascade={"remove"})
-     */
-    protected $comments;
-
-
-    /**
-     * @var string
      * @ORM\Column(name="lastName", type="string")
      * 
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -111,26 +102,5 @@ class Users extends BaseUser
     $this->roles = array('ROLE_USER'); // Ajoute le ROLE_USER par défaut lors de l'inscription au site
     }
 
-    /**
-     * Set comments
-     *
-     * @param string $comments
-     * @return Users
-     */
-    public function setComments($comments)
-    {
-        $this->comments = $comments;
 
-        return $this;
-    }
-
-    /**
-     * Get comments
-     *
-     * @return string 
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
 }
