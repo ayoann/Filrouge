@@ -18,6 +18,7 @@ class SeriesRepository extends EntityRepository
 		$query = $this->_em->createQuery(
     		'SELECT s
     		FROM IglesBundle:Series s
+    		WHERE s.moderation = 1
     		ORDER BY s.nomSerie ASC' );
 		
 		return $query->getResult();

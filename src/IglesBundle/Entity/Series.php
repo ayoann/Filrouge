@@ -50,6 +50,21 @@ class Series
      */
     private $saisons;
 
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="serie", cascade={"remove"})
+     */
+    private $commentaire_serie;
+
+
+    /**
+     * @var boolean
+     * @ORM\Column(name="moderation", type="boolean")
+     *
+     */
+    private $moderation;
+
 
     /**
      * Get id
@@ -152,6 +167,30 @@ class Series
     {
         return $this->saisons;
     }
+
+    /**
+     * Get moderation
+     *
+     * @return boolean 
+     */
+    public function getModeration()
+    {
+        return $this->moderation;
+    }
+
+    /**
+     * Set moderation
+     *
+     * @param string $moderation
+     * @return Series
+     */
+    public function setModeration($moderation)
+    {
+        $this->moderation = $moderation;
+
+        return $this;
+    }
+
     /**
      * Constructor
      */
@@ -173,6 +212,7 @@ class Series
 
         return $this;
     }
+
 
     /**
      * Remove episode
