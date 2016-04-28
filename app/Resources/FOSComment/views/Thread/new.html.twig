@@ -1,0 +1,64 @@
+{#
+
+ This file is part of the FOSCommentBundle package.
+
+ (c) FriendsOfSymfony <http://friendsofsymfony.github.com/>
+
+ This source file is subject to the MIT license that is bundled
+ with this source code in the file LICENSE.
+
+#}
+
+<form class="fos_comment_comment_form" action="{{ url('fos_comment_post_threads') }}" method="POST">
+
+    {% block fos_comment_form_fields %}
+        {{ form_errors(form) }}
+        {{ form_errors(form.id) }}
+        {{ form_widget(form.id) }}
+        {{ form_errors(form.permalink) }}
+        {{ form_widget(form.permalink) }}
+
+        {{ form_rest(form) }}
+    {% endblock %}
+
+    <div class="fos_comment_submit">
+        {% block fos_comment_form_submit %}
+            <input type="submit" value="{% trans from 'FOSCommentBundle' %}fos_comment_comment_new_submit{% endtrans %}" />
+        {% endblock %}
+    </div>
+
+</form>
+
+<div class="row">
+    <div class="well text-center">
+        {% for commentaire in commentaires %}
+            <div class="container">
+                <div class="row">
+                <div class="col-sm-12">
+                <h3>Commentaires</h3>
+                </div><!-- /col-sm-12 -->
+                </div><!-- /row -->
+                <div class="row">
+                <div class="col-sm-1">
+                <div class="thumbnail">
+                <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                </div><!-- /thumbnail -->
+                </div><!-- /col-sm-1 -->
+​
+                <div class="col-sm-5">
+                <div class="panel panel-default">
+                <div class="panel-heading">
+                <strong>{{ commentaire.auteur }}</strong> <span class="text-muted">{{commentaire.date|date('d/m/Y')}}</span>
+                </div>
+                <div class="panel-body">
+                {{ commentaire.contenu }}
+                </div><!-- /panel-body -->
+                </div><!-- /panel panel-default -->
+                </div><!-- /col-sm-5 -->
+​
+​
+            </div><!-- /container -->
+      {% endfor %}          
+        </div>
+    </div>
+</div>

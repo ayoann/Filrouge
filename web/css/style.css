@@ -4,9 +4,9 @@ html, body{
 	background-color: rgb(243, 242, 240);
 }
 header{
-	height: 10%;
+	height: 15%;
 	margin-bottom: 10px;
-	background-image: url("../images/fontheader.png");
+	background-image: url("../images/font.png");
 }
 
 #imgserie{
@@ -94,16 +94,13 @@ a:hover{
 #Membres:hover{
 	background-color: rgb(93, 188, 118);
 }
-#Accueil, #News, #Series, #programmes, #Forum{
+#Accueil, #News, #Series, #programmes, #Forum, #Membres{
 	height: 40px;
+	margin-top: 13.5px;
 	padding-top: 10px;
-	background-color: #686868;
+	background-color: #6C6C6C;
 	font-family: Arial, Helvetica;
-}
-#Membres{
-	height: 40px;
-	padding-top: 10px;
-	background-color: #686868;
+	color:white;
 }
 #espacemembres{
 	margin-top: 20px;
@@ -122,25 +119,27 @@ img{
 	height: 50%;
 }
 #colorform{
-	margin-top: 65px;
-	background-color: #7F7E7D;
+	margin-top: 85px;
+/*	background-color: #7F7E7D;*/
 	border-top-right-radius: 3% 4%;
 	border-bottom-right-radius: 3% 4%;
 	border-top-left-radius: 3% 4%;
 	border-bottom-left-radius: 3% 4%;
 	padding-bottom: 15px;
 	color:white;
+	background-image: url("../images/font.png");
 
 }
 #SignIn{
-	margin-top: 65px;
-	background-color: #7F7E7D;
+	margin-top: 85px;
+/*	background-color: #7F7E7D;*/
 	border-top-right-radius: 3% 4%;
 	border-bottom-right-radius: 3% 4%;
 	border-top-left-radius: 3% 4%;
 	border-bottom-left-radius: 3% 4%;
 	padding-bottom: 15px;
 	color:white;
+	background-image: url("../images/font.png");
 }
 #h3{
 	margin-top: 20px;
@@ -183,15 +182,23 @@ img{
 	margin-top: 20px;
 	margin-left: 20px;
 }
-
+#ajouter{
+	margin-top: 8px;
+}
 #motdepasse{
 	margin-top: 20px;
 	margin-left: -10px;
 	text-decoration: underline;
+	color: white;
 }
 #divh4{
-	margin-top: 70px;
+	margin-top: 0px;
 	margin-right: 40px;
+	background-color: rgb(78, 185, 198);
+}
+#divh42{
+	margin-top: 50px;
+	margin-right: 80px;
 	background-color: rgb(78, 185, 198);
 }
 
@@ -203,11 +210,13 @@ img{
 	background-color: white;
 	color: black;
 	margin-top: 30px;
+	background-image: url("../images/font2.png");
 }
 #user{
 	background-color: white;
 	color:black;
 	margin-top: -200px;
+	background-image: url("../images/font2.png");
 }
 #profile:hover{
 	text-decoration: none;
