@@ -1,1 +1,30 @@
 {% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h1>Résultats de recherche</h1>
+    <h3>Series</h3>
+        <div class="row">
+            {% for serie in series %}
+                <a href="{{ path('sériesone',{'id':serie.id}) }}">
+                    <div class="col-xs-6 ">
+                        {{ serie.nomSerie }}
+                        <img src="{{ serie.posterSerie }}" class="img-responsive"/>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+
+    <h3>Episodes</h3>
+    <div class="row">
+        {% for episode in episodes %}
+            <a href="{{ path('episode',{'id':episode.id}) }}">
+                <div class="col-xs-6 ">
+                    {{ episode.nomEpisode }}
+                    <img src="{{ episode.posterEpisode }}" class="img-responsive"/>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}
