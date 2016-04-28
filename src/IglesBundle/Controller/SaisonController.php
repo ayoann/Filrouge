@@ -19,6 +19,7 @@ class SaisonController extends Controller
         $em = $this->getDoctrine()->getManager();
         
         $saisons = $em->getRepository('IglesBundle:Saison')->getSaisons();
+        $series = $em->getRepository('IglesBundle:Series')->getSeries();
 
         return $this->render('Saisons/saisons.html.twig', array(
             'saisons' => $saisons
@@ -34,6 +35,7 @@ class SaisonController extends Controller
 
         $saisons=$this->getDoctrine()->getRepository('IglesBundle:Saison')
         ->find($id);
+        
 
         $episodes = $em->getRepository('IglesBundle:Saison')->getEpisodes();
 
