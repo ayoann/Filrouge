@@ -24,13 +24,22 @@
     <div class="row">
         <div class="col-xs-3 col-xs-offset-1 col-lg-2 col-lg-offset-1">
                 <img id="imagesaison" src="{{ series.posterSerie }}" alt="poster">
-        </div>    
+        </div>
         <div class="col-xs-2 col-xs-offset-1 col-lg-2 text-center">
             <div id="divsaison">
                 {% for serie in series.saisons %}
                     <a id="saisons" href="{{ path('saisonone', { 'id' : serie.id})}}"><p>{{ serie.numeroSaisons }}</p></a>
                 {% endfor %}
             </div>    
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-1">
+        {% if app.user.Suivre(series) %}
+            <a href="{{ path('follow',{'id':series.id}) }}" class="btn btn-primary" >Ne plus suivre </a>
+        {% else %}
+            <a href="{{ path('follow',{'id':series.id}) }}" class="btn btn-primary "> Suivre </a>
+        {% endif %}
         </div>
     </div>
     <div class="row">
