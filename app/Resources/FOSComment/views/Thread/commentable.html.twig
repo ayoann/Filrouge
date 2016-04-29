@@ -8,7 +8,7 @@
  with this source code in the file LICENSE.
 
 #}
-
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 <div class="fos_comment_commentable_form_holder">
     <form class="fos_comment_commentable_form" action="{{ url('fos_comment_patch_thread_commentable', {'id': id}) }}" data-fos-comment-thread-id="{{ id }}" method="POST">
 
@@ -31,3 +31,4 @@
 
     </form>
 </div>
+{% endif %}
