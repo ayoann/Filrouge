@@ -65,6 +65,13 @@ class Series
      */
     private $moderation;
 
+    /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="Rating", inversedBy="note_serie", cascade={"remove"})
+     */
+    private $note;
+
 
     /**
      * Get id
@@ -258,4 +265,60 @@ class Series
     }
 
     
+
+    /**
+     * Add commentaire_serie
+     *
+     * @param \IglesBundle\Entity\Comment $commentaireSerie
+     * @return Series
+     */
+    public function addCommentaireSerie(\IglesBundle\Entity\Comment $commentaireSerie)
+    {
+        $this->commentaire_serie[] = $commentaireSerie;
+
+        return $this;
+    }
+
+    /**
+     * Remove commentaire_serie
+     *
+     * @param \IglesBundle\Entity\Comment $commentaireSerie
+     */
+    public function removeCommentaireSerie(\IglesBundle\Entity\Comment $commentaireSerie)
+    {
+        $this->commentaire_serie->removeElement($commentaireSerie);
+    }
+
+    /**
+     * Get commentaire_serie
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCommentaireSerie()
+    {
+        return $this->commentaire_serie;
+    }
+
+    /**
+     * Set note
+     *
+     * @param \IglesBundle\Entity\Rating $note
+     * @return Series
+     */
+    public function setNote(\IglesBundle\Entity\Rating $note = null)
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * Get note
+     *
+     * @return \IglesBundle\Entity\Rating 
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
 }
