@@ -40,3 +40,4 @@ security:
         - { path: ^/delete, role: ROLE_ADMIN }
         - { path: ^/new, role: ROLE_USER }
         - { path: ^/update, role: ROLE_USER }
+        - { path: ^/vote, role: ROLE_USER }

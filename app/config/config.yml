@@ -86,3 +86,11 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+
+dcs_rating:
+    db_driver: orm
+    base_path_to_redirect: / # when the permalink is not configured
+    max_value: 5 # maximum value for the vote (stars displayed)
+    model:
+        rating: IglesBundle\Entity\Rating
+        vote: IglesBundle\Entity\VoteRating
