@@ -94,3 +94,8 @@ dcs_rating:
     model:
         rating: IglesBundle\Entity\Rating
         vote: IglesBundle\Entity\VoteRating
+
+fos_message:
+    db_driver: orm
+    thread_class: IglesBundle\Entity\ThreadMessage
+    message_class: IglesBundle\Entity\Message
