@@ -17,6 +17,8 @@
 </div>
 <div class="row">
 	<div class="col-xs-12 col-xs-offset-">
+		<a class="col-xs-1 col-xs-offset-9" href="{{ path('episodes_update', { 'id' : episodes.id})}}"><button  class="btn btn-warning"  type="submit" id="_submit" name="_submit" value="{{ ' Modifier'}}" /> Modifier épisodes </button></a>
+        <a class="col-xs-1 col-xs-offset-9" href="{{ path('episodes_delete', { 'id' : episodes.id})}}"><button  class="btn btn-danger"  type="submit" id="_submit" name="_submit" value="{{ ' Supprimer'}}" /> Supprimer episodes </button></a>
 	   		<img  id="imagesaison" src="{{ episodes.posterEpisode }}" alt="poster">
 	</div>	
 </div>

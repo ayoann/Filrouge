@@ -37,6 +37,9 @@ class SeriesRepository extends EntityRepository
 		
 	}
 
+<<<<<<< HEAD
+	
+=======
 	public function search($like,$limit = 10){
 
 		$query = $this->_em->createQuery(
@@ -49,5 +52,6 @@ class SeriesRepository extends EntityRepository
 
 		return $query->getResult();
 	}
+>>>>>>> 820823dabc1065181088d15b8278f750013b7c6b
 }
 

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="row">
+    <div class="col-xs-4 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-4 col-lg-offset-1">
+        <ol class="breadcrumb">
+            <li><a id="fil" href="{{ path('homepage') }}">Accueil</a></li>
+            <li><a id="fil" href="{{ path('séries') }}">Saisons</a></li>
+            <li class="active" >{{ saison.id}}</li>
+        </ol>
+    </div>
+    <a class="col-xs-1 col-xs-offset-4" href="{{ path('saison')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}" />Revenir à la liste</button></a>
+</div>
+<div class="row">        
+</div>
+<div class="row">
+            <div class="col-xs-6 col-xs-offset-4">
+                 <h1>Saisons</h1>
+                {{ form_start(update_form) }}
+                    {{ form_widget(update_form) }}
+                    <a class="col-xs-1 col-xs-offset-2" href="{{ path('saison')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
+                {{ form_end(update_form) }}
+            </div>
+</div>
+
+
+        <a class="col-xs-1 col-xs-offset-4" href="{{ path('saison')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Revenir à la liste</button></a>
+{% endblock %}
+                
