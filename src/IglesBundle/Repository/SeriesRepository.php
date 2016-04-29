@@ -36,5 +36,7 @@ class SeriesRepository extends EntityRepository
 		return $query->getResult();
 		
 	}
+
+	
 }
 

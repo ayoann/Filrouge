@@ -6,15 +6,15 @@
 	<div class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-6 col-md-offset-1 col-lg-4 col-lg-offset-1">
 		<ol class="breadcrumb">
 	  		<li><a id="fil" href="{{ path('homepage') }}">Accueil</a></li>
-	  		<li><a id="fil" href="{{ path('séries') }}">Séries</a></li>
-	  		<li class="active" >Ajout Séries</li>
+	  		<li><a id="fil" href="{{ path('séries') }}">Saisons</a></li>
+	  		<li class="active" >Ajout Saisons</li>
 		</ol>
 	</div>
 </div>
 
 <div class="row">
 	 <div class="col-xs-6 col-xs-offset-1">
-        <h1>Serie creation</h1>
+        <h1>Saisons creation</h1>
         {{ form_start(form) }}
             {{ form_widget(form) }}
             <a class="col-xs-1 col-xs-offset-4" href="{{ path('séries')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
@@ -24,5 +24,4 @@
 </div>
 
 {% endblock %}
-
 

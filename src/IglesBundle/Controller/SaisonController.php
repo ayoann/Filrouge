@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use IglesBundle\Entity\Saison;
 use IglesBundle\Entity\Series;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -44,12 +45,15 @@ class SaisonController extends Controller
     /**
      * Creates a new Saison entity.
      *
-     * @Route("/newSaison", name="saison_new")
+     * @Route("/series/{id}/newSaison", name="saison_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, $id)
     {
         $saison = new Saison();
+        $em = $this->getDoctrine()->getManager();
+        $serie = $em->getRepository('IglesBundle:Series')->find($id);
+        $saison->setSerie($serie);
         $form = $this->createForm('IglesBundle\Form\SaisonType', $saison);
         $form->handleRequest($request);
 
@@ -58,7 +62,7 @@ class SaisonController extends Controller
             $em->persist($saison);
             $em->flush();
 
-            return $this->redirectToRoute('séries');
+            return $this->redirectToRoute('sériesone',['id'=> $saison->getSerie()->getId()]);
         }
 
         return $this->render('Saisons/new.html.twig', array(
@@ -70,12 +74,17 @@ class SaisonController extends Controller
 /**
      * Updates a Saison entity.
      *
-     * @Route("/updateSaison/{id}", name="saison_update")
+     * @Route("series/updateSaison/{id}", name="saison_update")
      */
-    public function updateAction(Request $request, Saison $saisons)
-    {
+    public function updateAction(Request $request, Saison $saisons, $id)
+    {   
+        $saison = new Saison();
+        $em = $this->getDoctrine()->getManager();
+        $saison=$this->getDoctrine()->getRepository('IglesBundle:Saison')
+        ->find($id);
+    
         $deleteForm = $this->createDeleteForm($saison);
-        $updateForm = $this->createForm('IglesBundle\Form\saisonsType', $saison);
+        $updateForm = $this->createForm('IglesBundle\Form\SaisonType', $saison);
         $updateForm->handleRequest($request);
 
         if ($updateForm->isSubmitted() && $updateForm->isValid()) {
@@ -83,22 +92,22 @@ class SaisonController extends Controller
             $em->persist($saison);
             $em->flush();
 
-            return $this->redirectToRoute('séries');
-        }
 
+            return $this->redirectToRoute('sériesone',['id'=> $saison->getSerie()->getId()]);
+        }
+        
         return $this->render('Saisons/update.html.twig', array(
             'saison' => $saison,
             'update_form' => $updateForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        ));
+        )); 
     }
 
 
-    
     /**
      * Deletes a Saison entity.
      *
-     * @Route("/deleteSaison/{id}", name="saison_delete")
+     * @Route("saison/delete/{id}", name="saison_delete")
      */
     public function deleteAction(Request $request, $id)
     {
@@ -107,23 +116,24 @@ class SaisonController extends Controller
         
         
 
-        $form = $this->createFormBuilder($saisons)
+        $form = $this->createFormBuilder($saison)
                 ->add('delete', 'submit')
                 ->getForm();
 
         $form->handleRequest($request);
 
-          $em->remove($saisons);
+          $em->remove($saison);
           $em->flush();
            
-        return $this->redirectToRoute('séries');
+        return $this->redirectToRoute('sériesone',['id'=> $saison->getSerie()->getId()]);
 
-        $saisons = $em->getRepository('IglesBundle:Saison')->getSaison();
+        $saisons = $em->getRepository('IglesBundle:Series')->getSaisons();
 
-        return $this->render('Saisons/saisonone.html.twig', 
-            array('saison' => $saison, "saisons" => $saisons));
+        return $this->render('series/serieone.html.twig', 
+            array('series' => $series, "saisons" => $saisons));
 
     }
+
 
     /**
      * Creates a form to delete a Saison entity.

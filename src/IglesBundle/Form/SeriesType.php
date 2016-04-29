@@ -17,9 +17,6 @@ class SeriesType extends AbstractType
     {
         $builder
 
-            ->add('nomSerie')
-            ->add('posterSerie')
-            ->add('resumeSerie')
             
             ->add('nomSerie', null, array('label' => 'Nom Série', 'translation_domain' => 'IglesBundle'))
             ->add('posterSerie', null, array('label' => "Image Série", 'translation_domain' => 'IglesBundle'))

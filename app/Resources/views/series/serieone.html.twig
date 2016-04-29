@@ -11,9 +11,11 @@
 </div>
     <div class="row">
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        <a class="col-xs-1 col-xs-offset-9" href="{{ path('serie_update', { 'id' : series.id})}}"><button  class="btn btn-warning"  type="submit" id="_submit" name="_submit" value="{{ ' Modifier'}}" /> Modif séries </button></a>
-        <a class="col-xs-1 col-xs-offset-9" href="{{ path('serie_update', { 'id' : series.id})}}"><button  class="btn btn-warning"  type="submit" id="_submit" name="_submit" value="{{ ' Modifier'}}" /> Ajout saisons </button></a>
-        <a class="col-xs-1 " href="{{ path('serie_delete', { 'id' : series.id})}}"><button  class="btn btn-danger"  type="submit" id="_submit" name="_submit" value="{{ 'Supprimer'}}" />Supprimer</button></a>   
+        <a class="col-xs-1 col-xs-offset-9" href="{{ path('serie_update', { 'id' : series.id})}}"><button  class="btn btn-warning"  type="submit" id="_submit" name="_submit" value="{{ ' Modifier'}}" /> Modif série </button></a>
+        <a class="col-xs-1 " href="{{ path('serie_delete', { 'id' : series.id})}}"><button  class="btn btn-danger"  type="submit" id="_submit" name="_submit" value="{{ 'Supprimer'}}" />Supprimer série</button></a>
+        <a class="col-xs-1 col-xs-offset-9" href="{{ path('saison_new', { 'id' : series.id})}}"><button  class="btn btn-warning"  type="submit" id="_submit" name="_submit" value="{{ 'Ajouter'}}" />Ajouter saison</button></a>
+        
+        
         {% endif %}
     </div>
     <div class="row">

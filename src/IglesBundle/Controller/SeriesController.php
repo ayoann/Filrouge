@@ -109,7 +109,7 @@ class SeriesController extends Controller
      */
     public function deleteAction(Request $request, $id)
     {
-         $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
         $series = $em->getRepository('IglesBundle:Series')->find($id);
         
         

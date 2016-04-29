@@ -16,10 +16,10 @@ class SaisonType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('posterSaison')
-            ->add('resumeSaison')
-            ->add('numeroSaison')
-
+            
+            ->add('posterSaisons', null, array('label' => 'Poster Saison', 'translation_domain' => 'IglesBundle'))
+            ->add('resumeSaisons', null, array('label' => "Résumé Saison", 'translation_domain' => 'IglesBundle'))
+            ->add('numeroSaisons', null, array('label' => "Numéro Saison", "translation_domain" => "IglesBundle"))        
         ;
     }
     
