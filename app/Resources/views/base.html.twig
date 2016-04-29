@@ -21,8 +21,15 @@
                 <a class="col-xs-2 col-lg-1 " href="{{ path('fos_user_registration_register')}}">
                 <input id="creercompte" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="Créer un compte" /></a>
             {% endif %}
-
-        
+{#               <li>
+                <a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a>
+              </li>
+              <li>
+                <a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a>
+              </li>
+              <li>
+                <a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a>
+              </li> #}
         <div class="container-fluid">
             <div class="row">
                 <nav class="col-xs-12 col-sm-12 col-md-12">
