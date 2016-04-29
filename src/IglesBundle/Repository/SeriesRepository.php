@@ -36,5 +36,18 @@ class SeriesRepository extends EntityRepository
 		return $query->getResult();
 		
 	}
+
+	public function search($like,$limit = 10){
+
+		$query = $this->_em->createQuery(
+			'SELECT s
+			FROM IglesBundle:Series s
+			WHERE s.nomSerie LIKE :like
+			ORDER BY s.nomSerie ASC'
+			)->setParameter(':like','%'.$like.'%')
+			 ->setMaxResults($limit);
+
+		return $query->getResult();
+	}
 }
 
