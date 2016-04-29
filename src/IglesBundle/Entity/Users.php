@@ -2,8 +2,9 @@
 
 namespace IglesBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\MessageBundle\Model\ParticipantInterface;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * Users
@@ -11,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="IglesBundle\Repository\UsersRepository")
  */
-class Users extends BaseUser
+class Users extends BaseUser implements ParticipantInterface
 {
     /**
      * @var int
