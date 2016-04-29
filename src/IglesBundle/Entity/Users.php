@@ -2,8 +2,9 @@
 
 namespace IglesBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\MessageBundle\Model\ParticipantInterface;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * Users
@@ -11,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="IglesBundle\Repository\UsersRepository")
  */
-class Users extends BaseUser
+class Users extends BaseUser implements ParticipantInterface
 {
     /**
      * @var int
@@ -47,6 +48,19 @@ class Users extends BaseUser
      *
      */
     protected $birthday;
+
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="IglesBundle\Entity\Series")
+     */
+    private $follow;
+
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="IglesBundle\Entity\Episodes")
+     */
+    private $watch;
+
 
     /**
      * Get id
@@ -103,4 +117,84 @@ class Users extends BaseUser
     }
 
 
+
+    /**
+     * Add follow
+     *
+     * @param \IglesBundle\Entity\Series $follow
+     * @return Users
+     */
+    public function addFollow(\IglesBundle\Entity\Series $follow)
+    {
+        $this->follow[] = $follow;
+
+        return $this;
+    }
+
+    /**
+     * Remove follow
+     *
+     * @param \IglesBundle\Entity\Series $follow
+     */
+    public function removeFollow(\IglesBundle\Entity\Series $follow)
+    {
+        $this->follow->removeElement($follow);
+    }
+
+    /**
+     * Check if User Follow or Not a Serie
+     *
+     * @param Series $series
+     *
+     * @return bool
+     */
+    public function Suivre(Series $series){
+        if ($this->follow->contains($series)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Get follow
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFollow()
+    {
+        return $this->follow;
+    }
+
+    /**
+     * Add watch
+     *
+     * @param \IglesBundle\Entity\Episodes $watch
+     * @return Users
+     */
+    public function addWatch(\IglesBundle\Entity\Episodes $watch)
+    {
+        $this->watch[] = $watch;
+
+        return $this;
+    }
+
+    /**
+     * Remove watch
+     *
+     * @param \IglesBundle\Entity\Episodes $watch
+     */
+    public function removeWatch(\IglesBundle\Entity\Episodes $watch)
+    {
+        $this->watch->removeElement($watch);
+    }
+
+    /**
+     * Get watch
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getWatch()
+    {
+        return $this->watch;
+    }
 }

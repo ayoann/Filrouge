@@ -49,6 +49,19 @@ class Users extends BaseUser
     protected $birthday;
 
     /**
+     *
+     * @ORM\ManyToMany(targetEntity="IglesBundle\Entity\Series")
+     */
+    private $follow;
+
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="IglesBundle\Entity\Episodes")
+     */
+    private $watch;
+
+
+    /**
      * Get id
      *
      * @return integer 

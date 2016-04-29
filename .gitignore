@@ -9,3 +9,12 @@
 /composer.phar
 /vendor/
 /web/bundles/
+
+# intelJ
+.idea/*
+
+
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride

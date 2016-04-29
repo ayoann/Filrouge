@@ -35,5 +35,16 @@ class SaisonRepository extends EntityRepository
 		return $query->getResult();
 		
 	}
+
+	public function getSeries($serieid){
+		$query = $this->_em->createQyery(
+			'SELECT s, e
+			FROM IglesBundle:Series s
+			INNER JOIN s.saison e
+			WHERE s.id = :id'
+		)->setParameter('id', $serieid);
+
+		return $query->getResult();
+	}
 }
 
