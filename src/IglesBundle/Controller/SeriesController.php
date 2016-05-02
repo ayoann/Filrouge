@@ -148,5 +148,4 @@ class SeriesController extends Controller
         ;
     }
 
-
 }

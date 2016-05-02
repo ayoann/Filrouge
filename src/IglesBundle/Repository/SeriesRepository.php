@@ -36,8 +36,6 @@ class SeriesRepository extends EntityRepository
 		return $query->getResult();
 		
 	}
-
-
 	public function search($like,$limit = 10){
 
 		$query = $this->_em->createQuery(
@@ -50,6 +48,16 @@ class SeriesRepository extends EntityRepository
 
 		return $query->getResult();
 	}
-
+	public function getValidate()
+	{
+		$query = $this->_em->createQuery(
+    		'SELECT s
+    		FROM IglesBundle:Series s
+    		WHERE s.moderation = 0
+    		ORDER BY s.nomSerie ASC' );
+		
+		return $query->getResult();
+		
+	}
 }
 

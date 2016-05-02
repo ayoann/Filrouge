@@ -1,0 +1,38 @@
+{% extends '::base.html.twig'%}
+
+{% block body %}
+	<div class="row"><h1 class="col-xs-4 col-xs-offset-4">Séries en attente</h1></div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Affiche</th>
+					<th>Série</th>
+					<th>Résumer</th>
+					<th>Valider</th>
+					<th>Supprimer</th>
+				</tr>
+			</thead>
+		{% for serie in series %}
+			<tbody>
+				<tr>
+					{% if (serie.moderation == 0) %}
+					<td>
+						<img id="imgValidate" src="{{ serie.posterSerie }}" alt="poster" width="50px" height="50px">
+					</td>
+					<td class="col-xs-1">
+						{{ serie.nomSerie }}
+					</td>
+					<td>
+						{{ serie.resumeSerie }}
+					</td>
+					<td><a href="{{ path('moderation_valide_serie', { 'id': serie.id }) }}"><input
+						class="btn btn-success" class="btn btn-default" type="submit" value="Valider"></a></td>
+					<td><a href="{{ path('moderation_delete_serie', { 'id': serie.id }) }}"><input
+						class="btn btn-danger" class="btn btn-default" type="submit" value="Supprimer"></a></td>
+
+					{% endif %}					
+				</tr>
+			</tbody>
+		{% endfor %}
+		</table>
+{% endblock %}
