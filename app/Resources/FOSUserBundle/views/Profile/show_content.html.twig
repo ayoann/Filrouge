@@ -1,11 +1,6 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% if is_granted("ROLE_SUPER_ADMIN") %}
-<!-- <div class="row">
-	<div class="col-xs-4 col-xs-offset-4">
-		<a id="linkadmin" href="{{ path ('admin') }}"><p>Espace Super Admin</p></a>
-	</div>
-</div> -->
 <div class="row">
 	<div id="profile" class="col-xs-3 col-xs-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-1">
 			<img src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png">
@@ -23,6 +18,9 @@
 					</a>
 			</div>
 		{% endfor %}
+	</div>
+	<div class="col-xs-1 col-xs-offset-1">
+		<a href="{{ path('fos_message_inbox') }}"><button type="button" class="btn btn-primary">Messages<span class="badge">7</span></button></a>
 	</div>
 	<div id="user" class="col-xs-3 col-xs-offset-8 col-sm-2 col-sm-offset-8 col-lg-2 col-lg-offset-9">
 		{% for user in users %}
@@ -56,6 +54,9 @@
 				</a>
 			</div>
 		{% endfor %}
+	</div>
+	<div class="col-xs-1 col-xs-offset-1">
+	<a href="{{ path('fos_message_inbox') }}"><button type="button" class="btn btn-primary">Messages<span class="badge">7</span></button></a>
 	</div>
 	<div id="user" class="col-xs-3 col-xs-offset-8 col-sm-2 col-sm-offset-8 col-lg-2 col-lg-offset-9">
 		{% for user in users %}

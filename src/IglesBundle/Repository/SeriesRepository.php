@@ -37,6 +37,10 @@ class SeriesRepository extends EntityRepository
 		
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 	public function search($like,$limit = 10){
 
 		$query = $this->_em->createQuery(
@@ -50,6 +54,7 @@ class SeriesRepository extends EntityRepository
 		return $query->getResult();
 	}
 
+<<<<<<< HEAD
 	public function getValidate()
 	{
 		$query = $this->_em->createQuery(
@@ -61,5 +66,7 @@ class SeriesRepository extends EntityRepository
 		return $query->getResult();
 		
 	}
+=======
+>>>>>>> master
 }
 

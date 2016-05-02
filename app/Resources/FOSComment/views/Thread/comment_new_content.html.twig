@@ -17,6 +17,7 @@
 {% endif %}
 
 {% block fos_comment_comment_form_holder %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
     <div class="fos_comment_comment_form_holder">
         {% block fos_comment_form_title %}
             {% if first %}
@@ -54,4 +55,5 @@
         {% endblock fos_comment_comment_new_form %}
 
     </div>
+    {% endif %}
 {% endblock fos_comment_comment_form_holder %}
