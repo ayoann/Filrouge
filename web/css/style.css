@@ -129,6 +129,12 @@ img{
 	width: 100%;
 	height: 100%;
 }
+
+#imgValidate{
+	width: 90%;
+	height: 50%;
+}
+
 #item{
 	width: 100%;
 	height: 50%;
