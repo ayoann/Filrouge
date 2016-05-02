@@ -110,7 +110,7 @@ a:hover{
 	background-color: rgb(93, 188, 118);
 }
 #Accueil, #News, #Series, #programmes, #Forum, #Membres{
-	height: 40px;
+	height: 38px;
 	margin-top: 13.5px;
 	padding-top: 10px;
 	background-color: #6C6C6C;
@@ -237,7 +237,7 @@ img{
 #user{
 	background-color: white;
 	color:black;
-	margin-top: -305px;
+	margin-top: -200px;
 	background-image: url("../images/font2.png");
 }
 #profile:hover{

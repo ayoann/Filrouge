@@ -41,3 +41,4 @@ security:
         - { path: ^/new, role: ROLE_USER }
         - { path: ^/update, role: ROLE_USER }
         - { path: ^/vote, role: ROLE_USER }
+        - { path: ^/message, role: ROLE_USER }
