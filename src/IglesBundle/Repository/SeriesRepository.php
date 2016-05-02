@@ -37,9 +37,6 @@ class SeriesRepository extends EntityRepository
 		
 	}
 
-<<<<<<< HEAD
-	
-=======
 	public function search($like,$limit = 10){
 
 		$query = $this->_em->createQuery(
@@ -52,6 +49,17 @@ class SeriesRepository extends EntityRepository
 
 		return $query->getResult();
 	}
->>>>>>> 820823dabc1065181088d15b8278f750013b7c6b
+
+	public function getValidate()
+	{
+		$query = $this->_em->createQuery(
+    		'SELECT s
+    		FROM IglesBundle:Series s
+    		WHERE s.moderation = 0
+    		ORDER BY s.nomSerie ASC' );
+		
+		return $query->getResult();
+		
+	}
 }
 

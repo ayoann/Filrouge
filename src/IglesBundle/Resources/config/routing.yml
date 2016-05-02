@@ -31,3 +31,7 @@ fos_comment_api:
 dcs_rating:
     resource: "@DCSRatingBundle/Resources/config/routing.xml"
     prefix:   /
+
+igles_moderation:
+    path:    /moderation
+    defaults: { _controller: IglesBundle:Valide:index}

@@ -56,5 +56,5 @@
         </div>
     </div>
     {% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': series.id} %}
-    {% include 'DCSRatingBundle:Rating:control.html.twig' with {'id' : series.id, 'role' : 'ROLE_USER'} %}
+    {% include 'DCSRatingBundle:Rating:control.html.twig' with {'id' : series.id} %}
 {% endblock %}
