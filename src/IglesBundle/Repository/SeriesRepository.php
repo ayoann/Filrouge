@@ -59,5 +59,39 @@ class SeriesRepository extends EntityRepository
 		return $query->getResult();
 		
 	}
+
+	public function getSerieLimit($nb=3)
+	{
+		$query = $this->_em->createQuery(
+			'SELECT s
+    		FROM IglesBundle:Series s
+    		WHERE s.moderation = 1 AND s.id >= 7
+    		ORDER BY s.nomSerie DESC 
+    		' )->setMaxResults($nb);
+
+		return $query->getResult();
+	}
+
+	public function getSeriepop($nb=3)
+	{
+		$query = $this->_em->createQuery(
+			'SELECT s
+    		FROM IglesBundle:Series s
+    		INNER JOIN s.note n
+    		WHERE s.moderation = 1 AND s.note >= 3.0
+    		' )->setMaxResults($nb);
+
+		return $query->getResult();
+	}
+
+	public function countNotModerer(){
+		$query = $this->_em->createQuery(
+			'SELECT s
+			FROM IglesBundle:Series s
+			WHERE s.moderation  = 0
+			');
+		
+		return $query->getResult();
+	}
 }
 

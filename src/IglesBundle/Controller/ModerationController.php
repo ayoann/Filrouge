@@ -21,9 +21,10 @@ class ModerationController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $series = $em->getRepository('IglesBundle:Series')->getValidate();
+        $valides = $em->getRepository('IglesBundle:Series')->countNotModerer();
 
         return $this->render('IglesBundle::moderation.html.twig', array(
-            'series' => $series,
+            'series' => $series, "valides" => $valides
         ));
     }
 

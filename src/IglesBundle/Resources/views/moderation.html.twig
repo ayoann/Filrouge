@@ -1,7 +1,7 @@
 {% extends '::base.html.twig'%}
 
 {% block body %}
-	<div class="row"><h1 class="col-xs-4 col-xs-offset-4">Séries en attente</h1></div>
+	<div class="row"><h1 class="col-xs-4 col-xs-offset-4">Séries en attente {{ valides|length }}</h1></div>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -16,7 +16,7 @@
 			<tbody>
 				<tr>
 					{% if (serie.moderation == 0) %}
-					<td>
+					<td class="col-xs-3">
 						<img id="imgValidate" src="{{ serie.posterSerie }}" alt="poster" width="50px" height="50px">
 					</td>
 					<td class="col-xs-1">

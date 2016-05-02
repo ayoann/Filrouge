@@ -14,6 +14,18 @@ header{
 	height: 70%;
 	box-shadow: 4px 4px 8px;
 }
+#imgserieindex{
+	width: 80%;
+	height: 80%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	box-shadow: 4px 4px 8px;
+}
+#serieindex{
+	background-color: white;
+	margin-left: 30px;
+}
+
 #imgseriesearch{
 	width: 70%;
 	height: 70%;
@@ -131,8 +143,7 @@ img{
 }
 
 #imgValidate{
-	width: 90%;
-	height: 50%;
+	height: 30%;
 }
 
 #item{

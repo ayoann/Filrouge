@@ -14,7 +14,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $series = $em->getRepository('IglesBundle:Series')->getSeries();
+        $series = $em->getRepository('IglesBundle:Series')->getSerieLimit();
         
     	return $this->render('IglesBundle::index.html.twig', array(
             'series' => $series));
