@@ -31,7 +31,7 @@ class Saison
     /**
      * @var string
      *
-     * @ORM\Column(name="resume_saisons", type="string", length=255)
+     * @ORM\Column(name="resume_saisons", type="string", length=500)
      */
     private $resumeSaisons;
 

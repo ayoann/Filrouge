@@ -38,7 +38,7 @@ class Episodes
     /**
      * @var string
      *
-     * @ORM\Column(name="resume_episode", type="string", length=255)
+     * @ORM\Column(name="resume_episode", type="string", length=500)
      */
     private $resumeEpisode;
 

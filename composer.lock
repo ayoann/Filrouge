@@ -1000,11 +1000,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/def27463609e24af410b2606f0062de46fab5662",
-<<<<<<< HEAD
-                "reference": "16b04c49af05dd3fb381e4abe04f0e5e231ac76d",
-=======
                 "reference": "def27463609e24af410b2606f0062de46fab5662",
->>>>>>> 4bed7a9e56743a33fa5529c7dc1cdfda4dd55df6
                 "shasum": ""
             },
             "require": {
