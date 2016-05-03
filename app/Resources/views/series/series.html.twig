@@ -2,6 +2,7 @@
 
 
 {% block body %}
+<<<<<<< HEAD
 
 <div class="row">
 
@@ -28,6 +29,8 @@
 		   		<a id="series" href="{{ path('sériesone', { 'id' : serie.id})}}"><img id="imgserie" class="img-responsive" src="{{ serie.posterSerie }}" alt="poster"></a>
 		   	</figure>
 
+=======
+>>>>>>> 2ea50d17c9015c9cb65ea12b9c5f514275e5d487
 	<div class="row">
 		<div class="col-xs-4 col-xs-offset-2 col-lg-4 col-lg-offset-3">
 			<form class="navbar-form navbar-left" role="Search" method="POST" action="{{ path('search') }}">
@@ -36,7 +39,10 @@
 				</div>
 				<button type="submit" class="btn btn-default">Valider</button>
 			</form>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ea50d17c9015c9cb65ea12b9c5f514275e5d487
 		</div>
 		{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 			<a class="col-xs-1 col-xs-offset-2" href="{{ path('serie_new')}}"><button  id="ajouter" class="btn btn-success"  type="submit" id="_submit" name="_submit" value="{{ 'Ajouter'}}" />Ajouter</button></a>
@@ -54,6 +60,10 @@
 			</div>
 		{% endfor %}
 	</div>
+<<<<<<< HEAD
 	{% endfor %}
 {% endblock %}
 
+=======
+{% endblock %}
+>>>>>>> 2ea50d17c9015c9cb65ea12b9c5f514275e5d487
