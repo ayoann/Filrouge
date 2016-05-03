@@ -9,6 +9,24 @@
 	  		<li class="active" >{{ saisons.numeroSaisons }}</li>
 		</ol>
 	</div>
+
+	<div class="row">
+	<div class="col-xs-7 col-xs-offset-10">
+		{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+			{% if is_granted("ROLE_ADMIN") %}
+			<div class="dropdown">
+				<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Modifier
+					<span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><a href="{{ path('saison_update', { 'id' : saisons.id})}}">Modifier Saison</a></li>
+					<li><a href="{{ path('episodes_new', { 'id' : saisons.id})}}">Ajouter Episodes</a></li>
+					<li class="divider"></li>
+					<li><a href="{{ path('saison_delete', { 'id' : saisons.id})}}">Supprimer</a></li>
+				</ul>
+			</div>
+			{% endif %}
+		{% endif %}
+	</div>
 	<div class="row" >
 		<div class="col-xs-5 col-xs-offset-1 ">
 			<h3>{{ saisons.numeroSaisons }}</h3>
@@ -16,10 +34,6 @@
 		
 	</div>
 <div class="row">
-	<a class="col-xs-1 col-xs-offset-9" href="{{ path('episodes_new', { 'id' : saisons.id})}}"><button  class="btn btn-warning"  type="submit" id="_submit" name="_submit" value="{{ ' Ajouter'}}" /> Ajout épisodes </button></a>
-	<a class="col-xs-1 col-xs-offset-9" href="{{ path('saison_update', { 'id' : saisons.id})}}"><button  class="btn btn-warning"  type="submit" id="_submit" name="_submit" value="{{ ' Modifier'}}" /> Modifier saisons </button></a>
-    <a class="col-xs-1 col-xs-offset-9" href="{{ path('saison_delete', { 'id' : saisons.id})}}"><button  class="btn btn-danger"  type="submit" id="_submit" name="_submit" value="{{ ' Supprimer'}}" /> Supprimer saisons </button></a>
-
 		<div class="col-xs-4 col-xs-offset-1">
 	   			<img id="imagesaison2" src="{{ saisons.posterSaisons }}" alt="poster">
 		</div>
@@ -38,5 +52,7 @@
 		</div>
 	</div>
 </div>
-{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': saisons.id} %}
+	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+		{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': saisons.id} %}
+	{% endif %}
 {% endblock %}

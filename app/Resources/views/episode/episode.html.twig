@@ -10,22 +10,40 @@
 	  		<li class="active">{{ episodes.nomEpisode }}</li>
 		</ol>
 	</div>
+	<div class="row">
+
+		<div class="col-xs-7 col-xs-offset-10">
+			{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+				{% if is_granted("ROLE_ADMIN") %}
+					<div class="dropdown">
+						<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Modifier
+							<span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="{{ path('episodes_update', { 'id' : episodes.id})}}">Modifier Episode</a></li>
+							<li class="divider"></li>
+							<li><a href="{{ path('episodes_delete', { 'id' : episodes.id})}}">Supprimer</a></li>
+						</ul>
+					</div>
+				{% endif %}
+			{% endif %}
+		</div>
+	</div>
 <div class="row" >
 		<div class="col-xs-5 col-xs-offset-1">
 			<h3>{{ episodes.nomEpisode }}</h3>
 		</div>
 </div>
 <div class="row">
-	<div class="col-xs-12 col-xs-offset-">
-		<a class="col-xs-1 col-xs-offset-9" href="{{ path('episodes_update', { 'id' : episodes.id})}}"><button  class="btn btn-warning"  type="submit" id="_submit" name="_submit" value="{{ ' Modifier'}}" /> Modifier épisodes </button></a>
-        <a class="col-xs-1 col-xs-offset-9" href="{{ path('episodes_delete', { 'id' : episodes.id})}}"><button  class="btn btn-danger"  type="submit" id="_submit" name="_submit" value="{{ ' Supprimer'}}" /> Supprimer episodes </button></a>
+	<div class="col-xs-12 ">
 	   		<img  id="imagesaison" src="{{ episodes.posterEpisode }}" alt="poster">
-	</div>	
+	</div>
 </div>
 <div class="row">
 	<div class="col-xs-10 col-xs-offset-1">
 		<p id="resume" class="text-justify">{{ episodes.resumeEpisode }}</p>	
 	</div>
 </div>
-{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': episodes.id} %}
+	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+		{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': episodes.id} %}
+	{% endif %}
 {% endblock %}

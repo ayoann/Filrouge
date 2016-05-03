@@ -36,7 +36,10 @@ class SeriesRepository extends EntityRepository
 		return $query->getResult();
 		
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> d5433c2c7c69f5f4253fb8e76f2e3fab19580e96
 	public function search($like,$limit = 10){
 
 		$query = $this->_em->createQuery(
@@ -49,5 +52,53 @@ class SeriesRepository extends EntityRepository
 
 		return $query->getResult();
 	}
+<<<<<<< HEAD
+=======
+	public function getValidate()
+	{
+		$query = $this->_em->createQuery(
+    		'SELECT s
+    		FROM IglesBundle:Series s
+    		WHERE s.moderation = 0
+    		ORDER BY s.nomSerie ASC' );
+		
+		return $query->getResult();
+		
+	}
+
+	public function getSerieLimit($nb=3)
+	{
+		$query = $this->_em->createQuery(
+			'SELECT s
+    		FROM IglesBundle:Series s
+    		WHERE s.moderation = 1 AND s.id >= 7
+    		ORDER BY s.nomSerie DESC 
+    		' )->setMaxResults($nb);
+
+		return $query->getResult();
+	}
+
+	public function getSeriepop($nb=3)
+	{
+		$query = $this->_em->createQuery(
+			'SELECT s
+    		FROM IglesBundle:Series s
+    		INNER JOIN s.note n
+    		WHERE s.moderation = 1 AND s.note >= 3.0
+    		' )->setMaxResults($nb);
+
+		return $query->getResult();
+	}
+
+	public function countNotModerer(){
+		$query = $this->_em->createQuery(
+			'SELECT s
+			FROM IglesBundle:Series s
+			WHERE s.moderation  = 0
+			');
+		
+		return $query->getResult();
+	}
+>>>>>>> d5433c2c7c69f5f4253fb8e76f2e3fab19580e96
 }
 

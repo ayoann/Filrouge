@@ -14,6 +14,18 @@ header{
 	height: 70%;
 	box-shadow: 4px 4px 8px;
 }
+#imgserieindex{
+	width: 80%;
+	height: 80%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	box-shadow: 4px 4px 8px;
+}
+#serieindex{
+	background-color: white;
+	margin-left: 30px;
+}
+
 #imgseriesearch{
 	width: 70%;
 	height: 70%;
@@ -110,7 +122,7 @@ a:hover{
 	background-color: rgb(93, 188, 118);
 }
 #Accueil, #News, #Series, #programmes, #Forum, #Membres{
-	height: 40px;
+	height: 39.8px;
 	margin-top: 13.5px;
 	padding-top: 10px;
 	background-color: #6C6C6C;
@@ -129,6 +141,11 @@ img{
 	width: 100%;
 	height: 100%;
 }
+
+#imgValidate{
+	height: 30%;
+}
+
 #item{
 	width: 100%;
 	height: 50%;
@@ -214,18 +231,18 @@ img{
 	color: white;
 }
 #divh4{
-	margin-top: 0px;
-	margin-right: 40px;
+	margin-top: 90px;
 	background-color: rgb(78, 185, 198);
 }
 #divh42{
-	margin-top: 50px;
-	margin-right: 80px;
+	margin-top: 90px;
+	margin-left: 30px;
 	background-color: rgb(78, 185, 198);
 }
 
 #youtube{
 	padding-right: 73px;
+	margin-left: 165px;
 	margin-bottom: 50px;
 }
 #profile{
@@ -237,7 +254,7 @@ img{
 #user{
 	background-color: white;
 	color:black;
-	margin-top: -305px;
+	margin-top: -200px;
 	background-image: url("../images/font2.png");
 }
 #profile:hover{

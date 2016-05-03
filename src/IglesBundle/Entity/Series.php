@@ -60,10 +60,10 @@ class Series
 
     /**
      * @var boolean
-     * @ORM\Column(name="moderation", type="boolean")
+     * @ORM\Column(name="moderation", type="boolean", nullable=false, options={"default":true})
      *
      */
-    private $moderation;
+    private $moderation = 0;
 
     /**
      * @var string

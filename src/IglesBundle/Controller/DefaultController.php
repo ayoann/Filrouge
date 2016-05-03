@@ -12,8 +12,14 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-    	return $this->render('IglesBundle::index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $series = $em->getRepository('IglesBundle:Series')->getSerieLimit();
+        
+    	return $this->render('IglesBundle::index.html.twig', array(
+            'series' => $series));
     }
+    
 
     
 }
