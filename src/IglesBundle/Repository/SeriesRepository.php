@@ -36,10 +36,7 @@ class SeriesRepository extends EntityRepository
 		return $query->getResult();
 		
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> d5433c2c7c69f5f4253fb8e76f2e3fab19580e96
 	public function search($like,$limit = 10){
 
 		$query = $this->_em->createQuery(
@@ -52,8 +49,7 @@ class SeriesRepository extends EntityRepository
 
 		return $query->getResult();
 	}
-<<<<<<< HEAD
-=======
+
 	public function getValidate()
 	{
 		$query = $this->_em->createQuery(
@@ -99,6 +95,6 @@ class SeriesRepository extends EntityRepository
 		
 		return $query->getResult();
 	}
->>>>>>> d5433c2c7c69f5f4253fb8e76f2e3fab19580e96
+
 }
 
