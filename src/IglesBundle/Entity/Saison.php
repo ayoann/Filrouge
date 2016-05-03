@@ -31,14 +31,14 @@ class Saison
     /**
      * @var string
      *
-     * @ORM\Column(name="resume_saisons", type="string", length=500)
+     * @ORM\Column(name="resume_saisons", type="text")
      */
     private $resumeSaisons;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numero_saisons", type="text")
+     * @ORM\Column(name="numero_saisons", type="integer")
      */
     private $numeroSaisons;
 

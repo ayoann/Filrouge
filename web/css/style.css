@@ -21,6 +21,9 @@ header{
 	margin-bottom: 20px;
 	box-shadow: 4px 4px 8px;
 }
+#imgserieindex:hover{
+	transform:scale(1.2);
+ }
 #serieindex{
 	background-color: white;
 	margin-left: 30px;
@@ -115,14 +118,14 @@ a:hover{
 #Series:hover{
 	background-color: rgb(235, 52, 46);
 }
-#programmes:hover{
+#forum:hover{
 	background-color: #ef7a35;
 }
 #Membres:hover{
 	background-color: rgb(93, 188, 118);
 }
-#Accueil, #News, #Series, #programmes, #Forum, #Membres{
-	height: 39.8px;
+#Accueil, #News, #Series, #forum, #Membres{
+	height: 37px;
 	margin-top: 13.5px;
 	padding-top: 10px;
 	background-color: #6C6C6C;
@@ -132,6 +135,10 @@ a:hover{
 #espacemembres{
 	margin-top: 20px;
 	margin-right: 50px;
+}
+#slide{
+	margin-left: 720px;
+	width: 15%;
 }
 
 form{
@@ -161,6 +168,16 @@ img{
 	color:white;
 	background-image: url("../images/font.png");
 
+}
+#formcolor{
+	margin-top: 40px;
+	border-top-right-radius: 3% 4%;
+	border-bottom-right-radius: 3% 4%;
+	border-top-left-radius: 3% 4%;
+	border-bottom-left-radius: 3% 4%;
+	color:white;
+	line-height: 190%;
+	background-image: url("../images/font.png");
 }
 #SignIn{
 	margin-top: 85px;
@@ -196,6 +213,10 @@ img{
 }
 #connexion{
 	margin-top: 20px;
+}
+#valider{
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 #admin{
 	margin-top: 20px;
@@ -237,7 +258,7 @@ img{
 #divh42{
 	margin-top: 90px;
 	margin-left: 30px;
-	background-color: rgb(78, 185, 198);
+	background-color: #ef7a35;
 }
 
 #youtube{

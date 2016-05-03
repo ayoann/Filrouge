@@ -13,26 +13,14 @@
     <body>
         <header>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {% if is_granted("ROLE_SUPER_ADMIN") %}
             <div class="row">
-                <a class="col-xs-1 col-lg-1 col-xs-offset-8 col-lg-offset-9" href="{{ path ('admin') }}"><input id="admin" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Espace Admin'|trans({}, 'FOSUserBundle') }}" /></a>
-                {% endif %}
-                <a class="col-xs-2  col-sm-2  col-lg-2 " href="{{ path('fos_user_security_logout') }}"><input id="deconnexion" class="btn btn-danger"  type="submit" id="_submit" name="_submit" value="{{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}" /></a>
+                <a class="col-xs-2  col-sm-2  col-lg-2 col-lg-offset-10 " href="{{ path('fos_user_security_logout') }}"><input id="deconnexion" class="btn btn-danger"  type="submit" id="_submit" name="_submit" value="{{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}" /></a>
             </div>
             {% else %}
                 <a class="col-xs-1 col-xs-offset-8 col-lg-1 col-lg-offset-9" href="{{ path('fos_user_security_login')}}"><input id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Connexion'|trans }}" /></a>
                 <a class="col-xs-2 col-lg-1 " href="{{ path('fos_user_registration_register')}}">
                 <input id="creercompte" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="Créer un compte" /></a>
             {% endif %}
-{#               <li>
-                <a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a>
-              </li>
-              <li>
-                <a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a>
-              </li>
-              <li>
-                <a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a>
-              </li> #}
         <div class="container-fluid">
             <div class="row">
                 <nav class="col-xs-12 col-sm-12 col-md-12">
@@ -41,11 +29,23 @@
                         <a href="{{ path('séries') }}"><div id="News"class="col-xs-2 text-center">Séries</div> 
                         <a href="#"><div id="Series" class="col-xs-3 text-center">Programmes Séries</div> </a>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <a href="{{ path('fos_user_profile_show') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
+                                <ul id="slide" class="dropdown-menu">
+                                    <li><a href="{{ path('fos_user_profile_show') }}">Espace Membres</a></li>
+                                    <li><a href="{{ path('fos_message_inbox') }}">Messagerie</a></li>
+                                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="{{ path ('admin') }}">Espace Admin</a></li>
+                                    {% endif %}
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="{{ path ('moderation') }}">Espace Modérateur</a></li>
+                                    {% endif %}
+                                </ul>
                         {% else %}
                         <a href="{{ path('fos_user_security_login') }}"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
                         {% endif %}
-                        <a target="_blank" href="http://igleseyes.cmonfofo.com/"><div id="programmes" class="col-xs-3 text-center">Forum</div></a>
+                        <a target="_blank" href="http://igleseyes.cmonfofo.com/"><div id="forum" class="col-xs-3 text-center">Forum</div></a>
                     </div>
                 </nav>
             </div>

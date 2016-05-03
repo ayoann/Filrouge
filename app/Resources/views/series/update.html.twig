@@ -14,13 +14,24 @@
 <div class="row">        
 </div>
 <div class="row">
-            <div class="col-xs-6 col-xs-offset-4">
-                 <h1>Series</h1>
+    <div id="formcolor" class="col-xs-6 col-xs-offset-3">
+            <h1 class="text-center">Series</h1>
                 {{ form_start(update_form) }}
-                    {{ form_widget(update_form) }}
-                    <a class="col-xs-1 col-xs-offset-2" href="{{ path('séries')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
-                {{ form_end(update_form) }}
+            <div>
+                {{ form_label(update_form.nomSerie) }}
+                {{ form_widget(update_form.nomSerie, {'attr': {'class': 'form-control'}}) }}
             </div>
+                <div>
+                {{ form_label(update_form.posterSerie) }}
+                {{ form_widget(update_form.posterSerie, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div>
+                {{ form_label(update_form.resumeSerie) }}
+                {{ form_widget(update_form.resumeSerie, {'attr': {'class': 'form-control'}}) }}
+            </div>
+                <a class="col-lg-1 col-lg-offset-10" href="{{ path('séries')}}"><button id="valider" class="btn btn-success"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
+                {{ form_end(update_form) }}
+    </div>
 </div>
 {% endblock %}
                 

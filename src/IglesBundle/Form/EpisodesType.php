@@ -16,10 +16,10 @@ class EpisodesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomEpisode')
-            ->add('posterEpisode')
-            ->add('resumeEpisode')
-            ->add('numeroEpisode')
+            ->add('nomEpisode', null, array('label' => 'Nom :', 'translation_domain' => 'IglesBundle'))
+            ->add('posterEpisode', null, array('label' => 'Poster :', 'translation_domain' => 'IglesBundle'))
+            ->add('resumeEpisode', null, array('label' => 'Résume :', 'translation_domain' => 'IglesBundle'))
+            ->add('numeroEpisode', null, array('label' => 'Numero épisode :', 'translation_domain' => 'IglesBundle'))
 
         ;
     }

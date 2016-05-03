@@ -29,7 +29,7 @@
 	</div>
 	<div class="row" >
 		<div class="col-xs-5 col-xs-offset-1 ">
-			<h3>{{ saisons.numeroSaisons }}</h3>
+			<h3>Saison {{ saisons.numeroSaisons }}</h3>
 		</div>
 		
 	</div>
@@ -40,7 +40,7 @@
 	<div class="col-xs-2 text-center">
 		<div id="divsaison">
 			{% for saison in saisons.episodes %}
-				<a id="episodeslink" href="{{ path('episode', { 'id' : saison.id})}}"><p>{{ saison.numeroEpisode}}</p></a>
+				<a id="episodeslink" href="{{ path('episode', { 'id' : saison.id})}}"><p>Episode {{ saison.numeroEpisode}}</p></a>
 			{% endfor %}
 		</div>
 	</div>	

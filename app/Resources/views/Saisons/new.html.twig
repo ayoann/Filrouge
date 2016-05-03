@@ -13,11 +13,23 @@
 </div>
 
 <div class="row">
-	 <div class="col-xs-6 col-xs-offset-1">
-        <h1>Saisons creation</h1>
+	 <div id="formcolor" class="col-xs-6 col-xs-offset-3">
+        <h1 class="text-center">Ajouter Saison</h1>
         {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <a class="col-xs-1 col-xs-offset-4" href="{{ path('séries')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
+        <div>
+            {{ form_label(form.posterSaisons) }}
+            {{ form_widget(form.posterSaisons, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+            {{ form_label(form.numeroSaisons) }}
+            {{ form_widget(form.numeroSaisons, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+            {{ form_label(form.resumeSaisons) }}
+            {{ form_widget(form.resumeSaisons, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        
+            <a class="col-xs-1 col-xs-offset-10" href="{{ path('séries')}}"><button id="valider" class="btn btn-success"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
         {{ form_end(form) }}
 
     </div>

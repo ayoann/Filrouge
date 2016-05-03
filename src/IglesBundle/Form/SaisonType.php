@@ -17,9 +17,9 @@ class SaisonType extends AbstractType
     {
         $builder
             
-            ->add('posterSaisons', null, array('label' => 'Poster Saison', 'translation_domain' => 'IglesBundle'))
-            ->add('resumeSaisons', null, array('label' => "Résumé Saison", 'translation_domain' => 'IglesBundle'))
-            ->add('numeroSaisons', null, array('label' => "Numéro Saison", "translation_domain" => "IglesBundle"))        
+            ->add('posterSaisons', null, array('label' => 'Poster Saison :', 'translation_domain' => 'IglesBundle'))
+            ->add('numeroSaisons', null, array('label' => "Numéro Saison : ", 'translation_domain' => 'IglesBundle'))
+            ->add('resumeSaisons', null, array('label' => "Resume Saison :", "translation_domain" => "IglesBundle"))        
         ;
     }
     

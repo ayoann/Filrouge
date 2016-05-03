@@ -38,14 +38,14 @@ class Episodes
     /**
      * @var string
      *
-     * @ORM\Column(name="resume_episode", type="string", length=500)
+     * @ORM\Column(name="resume_episode", type="text", length=500)
      */
     private $resumeEpisode;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numero_episode", type="text")
+     * @ORM\Column(name="numero_episode", type="integer")
      */
     private $numeroEpisode;
 

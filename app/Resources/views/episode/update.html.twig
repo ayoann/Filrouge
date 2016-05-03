@@ -6,7 +6,7 @@
         <ol class="breadcrumb">
             <li><a id="fil" href="{{ path('homepage') }}">Accueil</a></li>
             <li><a id="fil" href="{{ path('séries') }}">Saisons</a></li>
-            <li class="active" >{{ episode.id}}</li>
+            <li class="active" >Episode {{ episode.numeroEpisode}}</li>
         </ol>
     </div>
     <a class="col-xs-1 col-xs-offset-4" href="{{ path('episode',{'id':episode.id})}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}" />Revenir à la liste</button></a>
@@ -14,16 +14,28 @@
 <div class="row">        
 </div>
 <div class="row">
-            <div class="col-xs-6 col-xs-offset-4">
-                 <h1>Episodes</h1>
-                {{ form_start(update_form) }}
-                    {{ form_widget(update_form) }}
-                    <a class="col-xs-1 col-xs-offset-2" href="{{ path('episode',{'id':episode.id})}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
-                {{ form_end(update_form) }}
-            </div>
+    <div id="formcolor" class="col-xs-6 col-xs-offset-3">
+        <h1 class="text-center">Modifier Episodes</h1>
+            {{ form_start(update_form) }}
+        <div>
+            {{ form_label(update_form.nomEpisode) }}
+            {{ form_widget(update_form.nomEpisode, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+            {{ form_label(update_form.posterEpisode) }}
+            {{ form_widget(update_form.posterEpisode, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+            {{ form_label(update_form.numeroEpisode) }}
+            {{ form_widget(update_form.numeroEpisode, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+            {{ form_label(update_form.resumeEpisode) }}
+            {{ form_widget(update_form.resumeEpisode, {'attr': {'class': 'form-control'}}) }}
+        </div>
+            <a class="col-lg-2 col-lg-offset-10" href="{{ path('saison')}}"><button id="valider" class="btn btn-success"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
+        {{ form_end(update_form) }}
+    </div>
 </div>
-
-
-        <a class="col-xs-1 col-xs-offset-4" href="{{ path('episode',{'id':episode.id})}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Revenir à la liste</button></a>
 {% endblock %}
                 

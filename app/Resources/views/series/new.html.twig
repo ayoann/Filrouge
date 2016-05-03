@@ -11,18 +11,33 @@
 		</ol>
 	</div>
 </div>
-
 <div class="row">
-	 <div class="col-xs-6 col-xs-offset-1">
-        <h1>Ajouter une série</h1>
+	<div class="col-xs-8 text-justify col-xs-offset-4">
+		<p> L'ajout de la série sera soumis à une modération. </p> 
+		<p> Si elle correspond aux critères elle sera validée sous peu par un Admin. </p>
+	</div>
+</div>
+<div class="row">
+	 <div id="formcolor" class="col-xs-6 col-xs-offset-3">
+        <h1 class="text-center">Ajouter une série</h1>
         {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <a class="col-xs-1 col-xs-offset-4" href="{{ path('séries')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
+        <div>
+           	{{ form_label(form.nomSerie) }}
+            {{ form_widget(form.nomSerie, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+            {{ form_label(form.posterSerie) }}
+            {{ form_widget(form.posterSerie, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+            {{ form_label(form.resumeSerie) }}
+            {{ form_widget(form.resumeSerie, {'attr': {'class': 'form-control'}}) }}
+        </div>
+            <a class="col-xs-1 col-xs-offset-10" href="{{ path('séries')}}"><button id="valider" class="btn btn-success"  type="submit" id="_submit" name="_submit" value="{{ 'Valider'}}">Valider</button></a>
         {{ form_end(form) }}
     </div>
 </div>
-	<p> L'ajout de la série sera soumis à une modération. </p> 
-	<p> Si elle correspond aux critères elle sera validée sous peu par un Admin. </p>
+	
 
 {% endblock %}
 
