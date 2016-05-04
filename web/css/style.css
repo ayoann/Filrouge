@@ -102,8 +102,12 @@ table{
 	height: 50%;
 	box-shadow: 5px 5px 5px;
 }
+#vue{
+	margin-top: 16px;
+}
 #follow, #unfollow{
 	margin-top: 10px;
+	margin-bottom: 10px;
 }
 #divsaison{
 	padding-top: 15px;

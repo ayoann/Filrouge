@@ -197,4 +197,11 @@ class Users extends BaseUser implements ParticipantInterface
     {
         return $this->watch;
     }
+
+    public function Vue(Episodes $episodes){
+        if ($this->watch->contains($episodes)){
+            return true;
+        }
+        return false;
+    }
 }
