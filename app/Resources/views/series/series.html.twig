@@ -2,35 +2,6 @@
 
 
 {% block body %}
-<<<<<<< HEAD
-
-<div class="row">
-
-	<div class="col-xs-offset-8">
-		<form class="navbar-form navbar-left" role="Search">
-
-	<div class="col-xs-4 col-xs-offset-2 col-lg-4 col-lg-offset-3">
-		<form class="navbar-form navbar-left" role="Search" method="POST" action="{{ path('search') }}">
-
-	        <div class="form-group">
-	          <input type="text" name="search" class="form-control" placeholder="Rechercher">
-	        </div>
-	        <button type="submit" class="btn btn-default">Valider</button>
-		</form>
-	</div>
-</div>
-<div class="row">
-<a class="col-xs-1 col-xs-offset-10" href="{{ path('serie_new')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Ajouter'}}" />Ajouter</button></a>
-	{% for serie in series %}
-	<div class="col-xs-offset-1">
-		<div class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
-		   	<figure>
-		   		<a id="series" href="{{ path('sériesone', { 'id' : serie.id})}}"><figcaption>{{ serie.nomSerie }}</figcaption></a>
-		   		<a id="series" href="{{ path('sériesone', { 'id' : serie.id})}}"><img id="imgserie" class="img-responsive" src="{{ serie.posterSerie }}" alt="poster"></a>
-		   	</figure>
-
-=======
->>>>>>> 2ea50d17c9015c9cb65ea12b9c5f514275e5d487
 	<div class="row">
 		<div class="col-xs-4 col-xs-offset-2 col-lg-4 col-lg-offset-3">
 			<form class="navbar-form navbar-left" role="Search" method="POST" action="{{ path('search') }}">
@@ -39,10 +10,6 @@
 				</div>
 				<button type="submit" class="btn btn-default">Valider</button>
 			</form>
-<<<<<<< HEAD
-
-=======
->>>>>>> 2ea50d17c9015c9cb65ea12b9c5f514275e5d487
 		</div>
 		{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 			<a class="col-xs-1 col-xs-offset-2" href="{{ path('serie_new')}}"><button  id="ajouter" class="btn btn-success"  type="submit" id="_submit" name="_submit" value="{{ 'Ajouter'}}" />Ajouter</button></a>
@@ -60,10 +27,4 @@
 			</div>
 		{% endfor %}
 	</div>
-<<<<<<< HEAD
-	{% endfor %}
 {% endblock %}
-
-=======
-{% endblock %}
->>>>>>> 2ea50d17c9015c9cb65ea12b9c5f514275e5d487

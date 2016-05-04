@@ -17,16 +17,10 @@
         {{ render(url('fos_comment_new_thread_comments', {"id": thread.id})) }}
     {% endif %}
 
-    {% if fos_comment_can_edit_thread(thread) %}
-    <div class="fos_comment_thread_commentable">
-        <button data-url="{{ url('fos_comment_edit_thread_commentable', {'id': thread.id, 'value': not thread.commentable}) }}" class="fos_comment_thread_commentable_action">
-            {{ (thread.commentable ? 'fos_comment_thread_close' : 'fos_comment_thread_open') | trans({}, 'FOSCommentBundle') }}
-        </button>
-    </div>
-    {% endif %}
+
 
     {% set count = thread.numComments %}
-    <h3>{% transchoice count with {'%count%': count} from "FOSCommentBundle" %}fos_comment_thread_comment_count{% endtranschoice %}</h3>
+    <h6 class="col-xs-offset-1">{% transchoice count with {'%count%': count} from "FOSCommentBundle" %}fos_comment_thread_comment_count{% endtranschoice %}</h6>
 {% endif %}
 
 {% for commentinfo in comments %}
