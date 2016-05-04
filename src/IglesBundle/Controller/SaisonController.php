@@ -91,6 +91,7 @@ class SaisonController extends Controller
 
         if ($updateForm->isSubmitted() && $updateForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $saison->setModerationSaison(0);
             $em->persist($saison);
             $em->flush();
 

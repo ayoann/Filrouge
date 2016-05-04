@@ -55,9 +55,13 @@ class Saison
      * @ORM\OneToMany(targetEntity="Episodes", mappedBy="saison", cascade={"remove"})
      */
     private $episodes;
-
-
-
+    
+     /**
+     * @var boolean
+     * @ORM\Column(name="moderationSaison", type="boolean", nullable=false, options={"default":true})
+     *
+     */
+    private $moderationSaison = 0;
     /**
      * Get id
      *
@@ -200,9 +204,26 @@ class Saison
         return $this->episodes;
     }
 
-    public function __toString()
+    /**
+     * Set moderationSaison
+     *
+     * @param boolean $moderationSaison
+     * @return Saison
+     */
+    public function setModerationSaison($moderationSaison)
     {
-    return $this->getPosterSaisons();
+        $this->moderationSaison = $moderationSaison;
+
+        return $this;
+    }
+
+    /**
+     * Get moderationSaison
+     *
+     * @return boolean 
+     */
+    public function getModerationSaison()
+    {
+        return $this->moderationSaison;
     }
 }
-

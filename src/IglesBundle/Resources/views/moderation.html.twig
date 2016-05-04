@@ -1,7 +1,7 @@
 {% extends '::base.html.twig'%}
 
 {% block body %}
-	<div class="row"><h1 class="col-xs-4 col-xs-offset-4">Séries en attente {{ valides|length }}</h1></div>
+	<div class="row"><h1 class="col-xs-4 col-xs-offset-4">Séries en attente ( {{ countSeries|length }} )</h1></div>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -28,6 +28,82 @@
 					<td><a href="{{ path('moderation_valide_serie', { 'id': serie.id }) }}"><input
 						class="btn btn-success" class="btn btn-default" type="submit" value="Valider"></a></td>
 					<td><a href="{{ path('moderation_delete_serie', { 'id': serie.id }) }}"><input
+						class="btn btn-danger" class="btn btn-default" type="submit" value="Supprimer"></a></td>
+
+					{% endif %}					
+				</tr>
+			</tbody>
+		{% endfor %}
+		</table>
+
+
+		<div class="row"><h1 class="col-xs-4 col-xs-offset-4">Saisons en attente ( {{ countSaisons|length }} )</h1></div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Affiche saison</th>
+					<th>Série</th>
+					<th>N° Saison</th>
+					<th>Résumer</th>
+					<th>Valider</th>
+					<th>Supprimer</th>
+				</tr>
+			</thead>
+		{% for saison in saisons %}
+			<tbody>
+				<tr>
+					{% if (saison.moderationSaison == 0) %}
+					<td class="col-xs-3">
+						<img id="imgValidate" src="{{ saison.posterSaisons }}" alt="poster" width="50px" height="50px">
+					</td>
+					<td class="col-xs-1">
+					 {{ saison.serie.nomSerie }}
+					</td>
+					<td>
+						{{ saison.numeroSaisons }}
+					</td>
+					<td>
+						{{ saison.resumeSaisons }}
+					</td>
+					<td><a href="{{ path('moderation_valide_saison', { 'id': saison.id }) }}"><input
+						class="btn btn-success" class="btn btn-default" type="submit" value="Valider"></a></td>
+					<td><a href="{{ path('moderation_delete_saison', { 'id': saison.id }) }}"><input
+						class="btn btn-danger" class="btn btn-default" type="submit" value="Supprimer"></a></td>
+
+					{% endif %}					
+				</tr>
+			</tbody>
+		{% endfor %}
+		</table>
+
+
+		<div class="row"><h1 class="col-xs-4 col-xs-offset-4">Episode en attente ( {{ countEpisodes|length }} )</h1></div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Episode</th>
+					<th>Série</th>
+					<th>Résumer</th>
+					<th>Valider</th>
+					<th>Supprimer</th>
+				</tr>
+			</thead>
+		{% for episode in episodes %}
+			<tbody>
+				<tr>
+					{% if (episode.moderationEpisode == 0) %}
+					<td>
+					 {{ episode.nomEpisode }}
+					</td>
+					<td>
+					 {{ episode.posterEpisode }}
+					</td>
+					<td>
+						{{ episode.resumeEpisode }}
+					</td>
+					<td><a href="{{ path('moderation_valide_episode', { 'id': episode.id }) }}"><input
+						class="btn btn-success" class="btn btn-default" type="submit" value="Valider"></a></td>
+					<td><a href="{{ path('moderation_delete_episode', { 'id': episode.id }) }}"><input
 						class="btn btn-danger" class="btn btn-default" type="submit" value="Supprimer"></a></td>
 
 					{% endif %}					

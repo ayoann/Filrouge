@@ -31,14 +31,14 @@ class Saison
     /**
      * @var string
      *
-     * @ORM\Column(name="resume_saisons", type="string", length=255)
+     * @ORM\Column(name="resume_saisons", type="text")
      */
     private $resumeSaisons;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numero_saisons", type="string", length=255)
+     * @ORM\Column(name="numero_saisons", type="integer")
      */
     private $numeroSaisons;
 
@@ -55,9 +55,13 @@ class Saison
      * @ORM\OneToMany(targetEntity="Episodes", mappedBy="saison", cascade={"remove"})
      */
     private $episodes;
-
-
-
+    
+     /**
+     * @var boolean
+     * @ORM\Column(name="moderationSaison", type="boolean", nullable=false, options={"default":true})
+     *
+     */
+    private $moderationSaison = 0;
     /**
      * Get id
      *
@@ -158,5 +162,68 @@ class Saison
     public function getSerie()
     {
         return $this->serie;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->episodes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add episodes
+     *
+     * @param \IglesBundle\Entity\Episodes $episodes
+     * @return Saison
+     */
+    public function addEpisode(\IglesBundle\Entity\Episodes $episodes)
+    {
+        $this->episodes[] = $episodes;
+
+        return $this;
+    }
+
+    /**
+     * Remove episodes
+     *
+     * @param \IglesBundle\Entity\Episodes $episodes
+     */
+    public function removeEpisode(\IglesBundle\Entity\Episodes $episodes)
+    {
+        $this->episodes->removeElement($episodes);
+    }
+
+    /**
+     * Get episodes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEpisodes()
+    {
+        return $this->episodes;
+    }
+
+    /**
+     * Set moderationSaison
+     *
+     * @param boolean $moderationSaison
+     * @return Saison
+     */
+    public function setModerationSaison($moderationSaison)
+    {
+        $this->moderationSaison = $moderationSaison;
+
+        return $this;
+    }
+
+    /**
+     * Get moderationSaison
+     *
+     * @return boolean 
+     */
+    public function getModerationSaison()
+    {
+        return $this->moderationSaison;
     }
 }
