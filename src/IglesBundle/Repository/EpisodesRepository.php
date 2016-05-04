@@ -26,4 +26,28 @@ class EpisodesRepository extends EntityRepository
 
 
     }
+
+    public function getEpisodeModeration()
+    {
+        $query = $this->_em->createQuery(
+            'SELECT s, e, f
+            FROM IglesBundle:Episodes s
+            INNER JOIN s.saison e
+            INNER JOIN e.serie f 
+            WHERE s.moderationEpisode = 0
+            ' );
+        
+        return $query->getResult();
+        
+    }
+
+    public function countNotModererEpisode(){
+            $query = $this->_em->createQuery(
+                'SELECT e
+                FROM IglesBundle:Episodes e
+                WHERE e.moderationEpisode  = 0
+                ');
+            
+            return $query->getResult();
+        }
 }

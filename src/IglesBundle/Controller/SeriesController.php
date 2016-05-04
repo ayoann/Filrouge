@@ -87,6 +87,7 @@ class SeriesController extends Controller
 
         if ($updateForm->isSubmitted() && $updateForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $series->setModeration(0);
             $em->persist($series);
             $em->flush();
 

@@ -18,6 +18,7 @@ class SaisonRepository extends EntityRepository
     		'SELECT s, e
     		FROM IglesBundle:Saison s
     		INNER JOIN s.episodes e
+    		WHERE e.moderationEpisode = 1
     		ORDER BY e.numeroEpisode ASC' );
 		
 		return $query->getResult();
@@ -30,6 +31,7 @@ class SaisonRepository extends EntityRepository
     		'SELECT s, e
     		FROM IglesBundle:Saison s
     		INNER JOIN s.serie e
+    		WHERE s.moderationSaison = 1
     		ORDER BY s.numeroSaisons ASC' );
 		
 		return $query->getResult();
@@ -44,6 +46,29 @@ class SaisonRepository extends EntityRepository
 			WHERE s.id = :id'
 		)->setParameter('id', $serieid);
 
+		return $query->getResult();
+	}
+
+		public function getSaisonsModeration()
+	{
+		$query = $this->_em->createQuery(
+    		'SELECT s, e
+    		FROM IglesBundle:Saison s
+    		INNER JOIN s.serie e
+    		WHERE s.moderationSaison = 0
+    		' );
+		
+		return $query->getResult();
+		
+	}
+
+	public function countNotModererSaisons(){
+		$query = $this->_em->createQuery(
+			'SELECT s
+			FROM IglesBundle:Saison s
+			WHERE s.moderationSaison  = 0
+			');
+		
 		return $query->getResult();
 	}
 }

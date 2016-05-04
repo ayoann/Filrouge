@@ -56,6 +56,13 @@ class Episodes
      */
     private $saison;
 
+    /**
+     * @var boolean
+     * @ORM\Column(name="moderationEpisode", type="boolean", nullable=false, options={"default":true})
+     *
+     */
+    private $moderationEpisode = 0;
+
 
     /**
      * Get id
@@ -180,5 +187,28 @@ class Episodes
     public function getSaison()
     {
         return $this->saison;
+    }
+
+    /**
+     * Set moderationEpisode
+     *
+     * @param boolean $moderationEpisode
+     * @return Episodes
+     */
+    public function setModerationEpisode($moderationEpisode)
+    {
+        $this->moderationEpisode = $moderationEpisode;
+
+        return $this;
+    }
+
+    /**
+     * Get moderationEpisode
+     *
+     * @return boolean 
+     */
+    public function getModerationEpisode()
+    {
+        return $this->moderationEpisode;
     }
 }

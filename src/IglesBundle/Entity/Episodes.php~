@@ -38,14 +38,14 @@ class Episodes
     /**
      * @var string
      *
-     * @ORM\Column(name="resume_episode", type="string", length=255)
+     * @ORM\Column(name="resume_episode", type="text", length=500)
      */
     private $resumeEpisode;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numero_episode", type="string", length=255)
+     * @ORM\Column(name="numero_episode", type="integer")
      */
     private $numeroEpisode;
 
@@ -55,6 +55,13 @@ class Episodes
      * @ORM\ManyToOne(targetEntity="Saison", inversedBy="episodes")
      */
     private $saison;
+
+    /**
+     * @var boolean
+     * @ORM\Column(name="moderationEpisode", type="boolean", nullable=false, options={"default":true})
+     *
+     */
+    private $moderationEpisode = 0;
 
 
     /**
@@ -180,5 +187,28 @@ class Episodes
     public function getSaison()
     {
         return $this->saison;
+    }
+
+    /**
+     * Set moderationEpisode
+     *
+     * @param boolean $moderationEpisode
+     * @return Episodes
+     */
+    public function setModerationEpisode($moderationEpisode)
+    {
+        $this->moderationEpisode = $moderationEpisode;
+
+        return $this;
+    }
+
+    /**
+     * Get moderationEpisode
+     *
+     * @return boolean 
+     */
+    public function getModerationEpisode()
+    {
+        return $this->moderationEpisode;
     }
 }

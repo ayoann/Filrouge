@@ -50,7 +50,7 @@ class SeriesRepository extends EntityRepository
 		return $query->getResult();
 	}
 
-	public function getValidate()
+	public function getSeriesModeration()
 	{
 		$query = $this->_em->createQuery(
     		'SELECT s
@@ -86,7 +86,7 @@ class SeriesRepository extends EntityRepository
 		return $query->getResult();
 	}
 
-	public function countNotModerer(){
+	public function countNotModererSeries(){
 		$query = $this->_em->createQuery(
 			'SELECT s
 			FROM IglesBundle:Series s
@@ -95,6 +95,9 @@ class SeriesRepository extends EntityRepository
 		
 		return $query->getResult();
 	}
+<<<<<<< HEAD
+=======
 
+>>>>>>> a491fea1f5bdb8d51492a3a9f8166f3a830e36d3
 }
 

@@ -2,6 +2,25 @@
 
 
 {% block body %}
+<<<<<<< HEAD
+<div class="row">
+
+	<div class="col-xs-offset-8">
+		<form class="navbar-form navbar-left" role="Search">
+
+	<div class="col-xs-4 col-xs-offset-2 col-lg-4 col-lg-offset-3">
+		<form class="navbar-form navbar-left" role="Search" method="POST" action="{{ path('search') }}">
+
+	        <div class="form-group">
+	          <input type="text" name="search" class="form-control" placeholder="Rechercher">
+	        </div>
+	        <button type="submit" class="btn btn-default">Valider</button>
+		</form>
+	</div>
+</div>
+<div class="row">
+<a class="col-xs-1 col-xs-offset-10" href="{{ path('serie_new')}}"><button id="connexion" class="btn btn-default"  type="submit" id="_submit" name="_submit" value="{{ 'Ajouter'}}" />Ajouter</button></a>
+=======
 	<div class="row">
 		<div class="col-xs-4 col-xs-offset-2 col-lg-4 col-lg-offset-3">
 			<form class="navbar-form navbar-left" role="Search" method="POST" action="{{ path('search') }}">
@@ -15,6 +34,7 @@
 			<a class="col-xs-1 col-xs-offset-2" href="{{ path('serie_new')}}"><button  id="ajouter" class="btn btn-success"  type="submit" id="_submit" name="_submit" value="{{ 'Ajouter'}}" />Ajouter</button></a>
 		{% endif %}
 	</div>
+>>>>>>> a491fea1f5bdb8d51492a3a9f8166f3a830e36d3
 	<div class="row">
 		{% for serie in series %}
 			<div class="col-xs-offset-1">
@@ -27,4 +47,9 @@
 			</div>
 		{% endfor %}
 	</div>
+<<<<<<< HEAD
 {% endblock %}
+
+=======
+{% endblock %}
+>>>>>>> a491fea1f5bdb8d51492a3a9f8166f3a830e36d3
