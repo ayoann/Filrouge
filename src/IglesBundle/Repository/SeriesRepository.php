@@ -95,6 +95,9 @@ class SeriesRepository extends EntityRepository
 		
 		return $query->getResult();
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 737b5d1eab666e07f3f52e1fab2b13564b622bf3
 }
 
