@@ -6,7 +6,7 @@
 		<ol class="breadcrumb">
 	  		<li><a id="fil" href="{{ path('homepage') }}">Accueil</a></li>
 	  		<li><a id="fil" href="{{ path('séries')}}">Séries</a></li>
-	  		<li class="active" >{{ saisons.numeroSaisons }}</li>
+	  		<li class="active" >Saison {{ saisons.numeroSaisons }}</li>
 		</ol>
 	</div>
 
@@ -50,6 +50,7 @@
 <div class="row">
 	<div class="col-xs-10 col-xs-offset-1">
 		<div id="divresume">
+			<h3>Synopsis :</h3>
 			<p id="resume" class="text-justify">{{ saisons.resumeSaisons }}</p>
 		</div>
 	</div>

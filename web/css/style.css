@@ -8,6 +8,11 @@ header{
 	margin-bottom: 10px;
 	background-image: url("../images/font.png");
 }
+#titlemessage{
+	margin-top: 30px;
+	margin-bottom: 40px;
+	background-image: url("../images/font2.png");
+}
 h2{
 	margin-bottom: 10px;
 }
@@ -37,13 +42,21 @@ h2{
 #imgserie{
 	width: 70%;
 	height: 70%;
+	margin-bottom:20px;
 	box-shadow: 4px 4px 8px;
+}
+#validate{
+	padding-top: 20px;
+	padding-bottom: 15px;
+	margin-top: 60px;
+	color: white;
+	background-image: url("../images/font.png");
 }
 #imgserieindex{
 	width: 80%;
 	height: 80%;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 60px;
+	margin-bottom: 60px;
 	box-shadow: 4px 4px 8px;
 }
 #imgserieindex:hover{
@@ -68,6 +81,7 @@ figcaption{
 	margin-bottom: 10px;
 }
 #searchnomserie {
+	margin-top: 80px;
 	margin-left: 3px;
 	color: white;
 	background-image: url("../images/font.png");
@@ -97,6 +111,12 @@ table{
 	margin-top: 10px;
 	box-shadow: 5px 5px 5px;
 }
+#imageepisode{
+	width: 90%;
+	height: 100%;
+	margin-top: 10px;
+	box-shadow: 5px 5px 5px;
+}
 #imagesaison2{
 	width: 50%;
 	height: 50%;
@@ -104,6 +124,7 @@ table{
 }
 #vue{
 	margin-top: 16px;
+	margin-left: 300px;
 }
 #follow, #unfollow{
 	margin-top: 10px;
@@ -202,8 +223,32 @@ img{
 	background-image: url("../images/font.png");
 
 }
+#colorformreset{
+	margin-top: 85px;
+	/*	background-color: #7F7E7D;*/
+	border-top-right-radius: 3% 4%;
+	border-bottom-right-radius: 3% 4%;
+	border-top-left-radius: 3% 4%;
+	border-bottom-left-radius: 3% 4%;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	color:white;
+	background-image: url("../images/font.png");
+
+}
 #formcolor{
 	margin-top: 40px;
+	border-top-right-radius: 3% 4%;
+	border-bottom-right-radius: 3% 4%;
+	border-top-left-radius: 3% 4%;
+	border-bottom-left-radius: 3% 4%;
+	color:white;
+	line-height: 190%;
+	background-image: url("../images/font.png");
+}
+#formcolorsign{
+	margin-top: 40px;
+	margin-bottom: 40px;
 	border-top-right-radius: 3% 4%;
 	border-bottom-right-radius: 3% 4%;
 	border-top-left-radius: 3% 4%;
@@ -305,6 +350,13 @@ img{
 	margin-top: 30px;
 	background-image: url("../images/font2.png");
 }
+#profilevue{
+	background-color: white;
+	color: black;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	background-image: url("../images/font2.png");
+}
 #user{
 	background-color: white;
 	color:black;
@@ -317,7 +369,7 @@ img{
 }
 #meserror{
 	margin-top: 30px;
-	background-color: red;
+	background-color: #FE2E2E;
 }
 #search{
 	margin-top: 50px;

@@ -1,8 +1,11 @@
 {% extends 'FOSMessageBundle::layout.html.twig' %}
 
 {% block fos_message_content %}
-
-<h2>{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</h2>
+<section class="col-xs-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</h4>
+        </div>
 
 {% include 'FOSMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}
 

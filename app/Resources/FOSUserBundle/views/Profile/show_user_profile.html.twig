@@ -40,6 +40,12 @@
 					<p class="text-center">Series Suivies</p>
 				</div>
 			</div>
+			<div class="row">
+				<div id="profilevue" class="col-xs-3 col-xs-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-1">
+					<h2 class="text-center"><strong> {{ user.watch|length }} </strong></h2>
+					<p class="text-center">Episodes Vues</p>
+				</div>
+			</div>
 		{% else %}
 			<div class="row">
 				<div id="profile" class="col-xs-3 col-xs-offset-1 col-sm-2 col-sm-offset-2 col-lg-2 col-lg-offset-1">
@@ -71,6 +77,12 @@
 				<div id="profile" class="col-xs-3 col-xs-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-1">
 					<h2 class="text-center"><strong> {{ user.follow|length }} </strong></h2>
 					<p class="text-center">Series Suivies</p>
+				</div>
+			</div>
+			<div class="row">
+				<div id="profilevue" class="col-xs-3 col-xs-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-1">
+					<h2 class="text-center"><strong> {{ user.watch|length }} </strong></h2>
+					<p class="text-center">Episodes Vues</p>
 				</div>
 			</div>
 

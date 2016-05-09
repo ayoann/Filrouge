@@ -29,25 +29,32 @@
 		</div>
 	</div>
 <div class="row" >
-		<div class="col-xs-4 col-xs-offset-1">
+		<div class="col-xs-4 col-xs-offset-2">
 			<h3>{{ episodes.nomEpisode }}</h3>
 		</div>
-	{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-		{% if app.user.Vue(episodes) %}
-			<a id="vue" href="{{ path('episode_vue',{'id':episodes.id}) }}" class="btn btn-info glyphicon glyphicon-eye-open" ></a>
-		{% else %}
-			<a id="vue" href="{{ path('episode_vue',{'id':episodes.id}) }}" class="btn btn-info glyphicon glyphicon-eye-close"></a>
+	<div>
+		{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			{% if app.user.Vue(episodes) %}
+				<a id="vue" href="{{ path('episode_vue',{'id':episodes.id}) }}" class="btn btn-info glyphicon glyphicon-eye-open" ></a>
+			{% else %}
+				<a id="vue" href="{{ path('episode_vue',{'id':episodes.id}) }}" class="btn btn-info glyphicon glyphicon-eye-close"></a>
+			{% endif %}
 		{% endif %}
-	{% endif %}
+	</div>
 </div>
 <div class="row">
-	<div class="col-xs-12 ">
-	   		<img  id="imagesaison" src="{{ episodes.posterEpisode }}" alt="poster">
+	<div class="col-xs-10 col-xs-offset-1 ">
+		<div class="col-xs-offset-1">
+	   		<img  id="imageepisode" src="{{ episodes.posterEpisode }}" alt="poster">
+		</div>
 	</div>
 </div>
 <div class="row">
 	<div class="col-xs-10 col-xs-offset-1">
-		<p id="resume" class="text-justify">{{ episodes.resumeEpisode }}</p>	
+		<div id="divresume">
+			<h3>Synopsis :</h3>
+			<p id="resume" class="text-justify">{{ episodes.resumeEpisode }}</p>
+		</div>
 	</div>
 </div>
 	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}

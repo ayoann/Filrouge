@@ -1,12 +1,11 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
-<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
-    <div id="colorformoublie" class="col-xs-3 col-xs-offset-5">
-        {% if invalid_username is defined %}
-            <p>{{ 'Pseudo invalid'|trans({'%username%': invalid_username}) }}</p>
-        {% endif %}
-        <label for="username">{{ 'Pseudo :'|trans }}</label>
-        <input class="form-control" type="text" id="username" name="username" required="required" />
-        <input id="submit" class="btn btn-default" type="submit" value="{{ 'Valider'|trans }}" />
-    </div>
-</form>
+    <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+        <div id="colorformreset" class="col-xs-4 col-xs-offset-4">
+            {% if invalid_username is defined %}
+                <p>{{ 'Pseudo invalid'|trans({'%username%': invalid_username}) }}</p>
+            {% endif %}
+            <label for="username">{{ 'Pseudo :'|trans }}</label>
+            <input class="form-control" type="text" id="username" name="username" required="required" />
+            <input id="valider" class="btn btn-success" type="submit" value="{{ 'Valider'|trans }}" />
+        </div>
+    </form>

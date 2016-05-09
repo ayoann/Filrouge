@@ -1,0 +1,17 @@
+{% extends 'FOSMessageBundle::layout.html.twig' %}
+
+{% block fos_message_content %}
+<section class="col-xs-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Nouveau Message</h4>
+        </div>
+
+    <form action="{{ url('fos_message_thread_new') }}" method="post">
+        {{ form_widget(form)}}
+
+
+        <input type="submit" />
+    </form>
+
+{% endblock %}
