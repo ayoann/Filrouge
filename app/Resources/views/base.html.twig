@@ -32,7 +32,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><div id="Membres" class="col-xs-2 text-center">Membres</div></a>
                                 <ul id="slide" class="dropdown-menu">
                                     <li><a href="{{ path('fos_user_profile_show') }}">Espace Membres</a></li>
-                                    <li><a href="{{ path('fos_message_inbox') }}">Messagerie</a></li>
+                                    <li><a href="{{ path('fos_message_inbox') }}">Messagerie ({{ fos_message_nb_unread() }})</a></li>
                                     {% if is_granted('ROLE_SUPER_ADMIN') %}
                                         <li role="separator" class="divider"></li>
                                         <li><a href="{{ path ('admin') }}">Espace Admin</a></li>
