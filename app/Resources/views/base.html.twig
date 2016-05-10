@@ -39,7 +39,8 @@
                                     {% endif %}
                                     {% if is_granted('ROLE_ADMIN') %}
                                         <li role="separator" class="divider"></li>
-                                        <li><a href="{{ path ('moderation') }}">Espace Modérateur</a></li>
+                                        <li><a href="{{ path ('moderation') }}">Espace Séries</a></li>
+                                        <li><a href="{{ path ('admin') }}">Espace Modération</a></li>
                                     {% endif %}
                                 </ul>
                         {% else %}
