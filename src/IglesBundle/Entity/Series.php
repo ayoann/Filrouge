@@ -31,9 +31,9 @@ class Series
     /**
      * @var string
      *
-     * @ORM\Column(name="poster_serie", type="string", length=255)
+     * @ORM\OneToOne(targetEntity= "Poster", cascade={"all"})
      */
-    private $posterSerie;
+    private $seriePoster;
 
     /**
      * @var string
@@ -105,29 +105,7 @@ class Series
     {
         return $this->nomSerie;
     }
-
-    /**
-     * Set posterSerie
-     *
-     * @param string $posterSerie
-     * @return Series
-     */
-    public function setPosterSerie($posterSerie)
-    {
-        $this->posterSerie = $posterSerie;
-
-        return $this;
-    }
-
-    /**
-     * Get posterSerie
-     *
-     * @return string 
-     */
-    public function getPosterSerie()
-    {
-        return $this->posterSerie;
-    }
+    
 
     /**
      * Set resumeSerie
@@ -320,5 +298,28 @@ class Series
     public function getNote()
     {
         return $this->note;
+    }
+
+    /**
+     * Set seriePoster
+     *
+     * @param \IglesBundle\Entity\Poster $seriePoster
+     * @return Series
+     */
+    public function setSeriePoster(\IglesBundle\Entity\Poster $seriePoster = null)
+    {
+        $this->seriePoster = $seriePoster;
+
+        return $this;
+    }
+
+    /**
+     * Get seriePoster
+     *
+     * @return \IglesBundle\Entity\Poster 
+     */
+    public function getSeriePoster()
+    {
+        return $this->seriePoster;
     }
 }

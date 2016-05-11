@@ -16,14 +16,14 @@
 	 <div id="formcolor" class="col-xs-6 col-xs-offset-3">
         <h1 class="text-center">Ajouter Saison</h1>
         {{ form_start(form) }}
-        <div>
-            {{ form_label(form.posterSaisons) }}
-            {{ form_widget(form.posterSaisons, {'attr': {'class': 'form-control'}}) }}
-        </div>
+
         <div>
             {{ form_label(form.numeroSaisons) }}
             {{ form_widget(form.numeroSaisons, {'attr': {'class': 'form-control'}}) }}
         </div>
+         <div>
+             {{ form_widget(form.saisonPoster) }}
+         </div>
         <div>
             {{ form_label(form.resumeSaisons) }}
             {{ form_widget(form.resumeSaisons, {'attr': {'class': 'form-control'}}) }}

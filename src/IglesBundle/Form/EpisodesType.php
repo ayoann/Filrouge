@@ -17,7 +17,7 @@ class EpisodesType extends AbstractType
     {
         $builder
             ->add('nomEpisode', null, array('label' => 'Nom :', 'translation_domain' => 'IglesBundle'))
-            ->add('posterEpisode', null, array('label' => 'Poster :', 'translation_domain' => 'IglesBundle'))
+            ->add('episodePoster', new PosterType, array('label' => 'Poster :', 'translation_domain' => 'IglesBundle'))
             ->add('resumeEpisode', null, array('label' => 'Résume :', 'translation_domain' => 'IglesBundle'))
             ->add('numeroEpisode', null, array('label' => 'Numero épisode :', 'translation_domain' => 'IglesBundle'))
 

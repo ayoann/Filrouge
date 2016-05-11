@@ -31,9 +31,9 @@ class Episodes
     /**
      * @var string
      *
-     * @ORM\Column(name="poster_episode", type="string", length=255)
+     * @ORM\OneToOne(targetEntity= "Poster", cascade={"all"})
      */
-    private $posterEpisode;
+    private $episodePoster;
 
     /**
      * @var string
@@ -96,29 +96,7 @@ class Episodes
     {
         return $this->nomEpisode;
     }
-
-    /**
-     * Set posterEpisode
-     *
-     * @param string $posterEpisode
-     * @return Episodes
-     */
-    public function setPosterEpisode($posterEpisode)
-    {
-        $this->posterEpisode = $posterEpisode;
-
-        return $this;
-    }
-
-    /**
-     * Get posterEpisode
-     *
-     * @return string 
-     */
-    public function getPosterEpisode()
-    {
-        return $this->posterEpisode;
-    }
+    
 
     /**
      * Set resumeEpisode
@@ -210,5 +188,28 @@ class Episodes
     public function getModerationEpisode()
     {
         return $this->moderationEpisode;
+    }
+
+    /**
+     * Set episodePoster
+     *
+     * @param \IglesBundle\Entity\Poster $episodePoster
+     * @return Episodes
+     */
+    public function setEpisodePoster(\IglesBundle\Entity\Poster $episodePoster = null)
+    {
+        $this->episodePoster = $episodePoster;
+
+        return $this;
+    }
+
+    /**
+     * Get episodePoster
+     *
+     * @return \IglesBundle\Entity\Poster 
+     */
+    public function getEpisodePoster()
+    {
+        return $this->episodePoster;
     }
 }

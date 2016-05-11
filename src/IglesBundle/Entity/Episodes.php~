@@ -31,9 +31,9 @@ class Episodes
     /**
      * @var string
      *
-     * @ORM\Column(name="poster_episode", type="string", length=255)
+     * @ORM\OneToOne(targetEntity= "Poster", cascade={"all"})
      */
-    private $posterEpisode;
+    private $episodePoster;
 
     /**
      * @var string

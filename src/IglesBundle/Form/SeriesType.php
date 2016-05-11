@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use IglesBundle\Entity\Poster;
 
 class SeriesType extends AbstractType
 {
@@ -20,7 +21,7 @@ class SeriesType extends AbstractType
             
 
             ->add('nomSerie', null, array('label' => 'Nom ', 'translation_domain' => 'IglesBundle'))
-            ->add('posterSerie', null, array('label' => "Poster ", 'translation_domain' => 'IglesBundle'))
+            ->add('seriePoster', new PosterType, array('label' => "Poster ", 'translation_domain' => 'IglesBundle'))
             ->add('resumeSerie', null, array('label' => "Résume ", "translation_domain" => "IglesBundle"))
 
         ;
@@ -36,4 +37,3 @@ class SeriesType extends AbstractType
         ));
     }
 }
-

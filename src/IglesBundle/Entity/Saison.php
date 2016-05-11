@@ -24,9 +24,9 @@ class Saison
     /**
      * @var string
      *
-     * @ORM\Column(name="poster_saisons", type="string", length=255)
+     * @ORM\OneToOne(targetEntity= "Poster", cascade={"all"})
      */
-    private $posterSaisons;
+    private $saisonPoster;
 
     /**
      * @var string
@@ -72,28 +72,7 @@ class Saison
         return $this->id;
     }
 
-    /**
-     * Set posterSaisons
-     *
-     * @param string $posterSaisons
-     * @return Saison
-     */
-    public function setPosterSaisons($posterSaisons)
-    {
-        $this->posterSaisons = $posterSaisons;
-
-        return $this;
-    }
-
-    /**
-     * Get posterSaisons
-     *
-     * @return string 
-     */
-    public function getPosterSaisons()
-    {
-        return $this->posterSaisons;
-    }
+    
 
     /**
      * Set resumeSaisons
@@ -225,5 +204,28 @@ class Saison
     public function getModerationSaison()
     {
         return $this->moderationSaison;
+    }
+
+    /**
+     * Set saisonPoster
+     *
+     * @param \IglesBundle\Entity\Poster $saisonPoster
+     * @return Saison
+     */
+    public function setSaisonPoster(\IglesBundle\Entity\Poster $saisonPoster = null)
+    {
+        $this->saisonPoster = $saisonPoster;
+
+        return $this;
+    }
+
+    /**
+     * Get saisonPoster
+     *
+     * @return \IglesBundle\Entity\Poster 
+     */
+    public function getSaisonPoster()
+    {
+        return $this->saisonPoster;
     }
 }

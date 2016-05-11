@@ -28,9 +28,10 @@ class SaisonRepository extends EntityRepository
 	public function getSaisons()
 	{
 		$query = $this->_em->createQuery(
-    		'SELECT s, e
+    		'SELECT s, e, t
     		FROM IglesBundle:Saison s
     		INNER JOIN s.serie e
+    		LEFT JOIN s.saisonPoster t
     		WHERE s.moderationSaison = 1
     		ORDER BY s.numeroSaisons ASC' );
 		

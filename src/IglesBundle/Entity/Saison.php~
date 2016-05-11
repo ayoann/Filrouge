@@ -24,9 +24,9 @@ class Saison
     /**
      * @var string
      *
-     * @ORM\Column(name="poster_saisons", type="string", length=255)
+     * @ORM\OneToOne(targetEntity= "Poster", cascade={"all"})
      */
-    private $posterSaisons;
+    private $saisonPoster;
 
     /**
      * @var string

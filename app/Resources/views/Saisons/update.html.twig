@@ -17,13 +17,12 @@
                  <h1 class="text-center">Saisons</h1>
                 {{ form_start(update_form) }}
             <div>
-                {{ form_label(update_form.posterSaisons) }}
-                {{ form_widget(update_form.posterSaisons, {'attr': {'class': 'form-control'}}) }}
-            </div>
-            <div>
                 {{ form_label(update_form.numeroSaisons) }}
                 {{ form_widget(update_form.numeroSaisons, {'attr': {'class': 'form-control'}}) }}
             </div>
+                <div>
+                    {{ form_widget(update_form.saisonPoster) }}
+                </div>
              <div>
                 {{ form_label(update_form.resumeSaisons) }}
                 {{ form_widget(update_form.resumeSaisons, {'attr': {'class': 'form-control'}}) }}

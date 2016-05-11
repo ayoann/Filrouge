@@ -7,7 +7,7 @@
             <a href="#series" data-toggle="tab">Séries en attente ( {{ countSeries|length }} )</a>
         </li>
         <li>
-            <a href="#saisons" data-toggle="tab">Saisons en attente  ( {{ countSaisons|length }} )</a>
+            <a href="#saison" data-toggle="tab">Saisons en attente  ( {{ countSaisons|length }} )</a>
         </li>
         <li>
             <a href="#episodes" data-toggle="tab">Episodes en attente  ( {{ countEpisodes|length }} )</a>
@@ -31,7 +31,7 @@
 						<tr>
 							{% if (serie.moderation == 0) %}
 							<td class="col-xs-3">
-								<img id="imgValidate" src="{{ serie.posterSerie }}" alt="poster" width="50px" height="50px">
+								<img id="imgValidate" src="{{ serie.seriePoster.getWebPath  }}" alt="poster" width="50px" height="50px">
 							</td>
 							<td class="col-xs-1">
 								{{ serie.nomSerie }}
@@ -68,7 +68,7 @@
 					<tr>
 						{% if (saison.moderationSaison == 0) %}
 						<td class="col-xs-3">
-							<img id="imgValidate" src="{{ saison.posterSaisons }}" alt="poster" width="50px" height="50px">
+							<img id="imgValidate" src="{{ saison.saisonPoster.getWebPath  }}" alt="poster">
 						</td>
 						<td class="col-xs-1">
 						 {{ saison.serie.nomSerie }}
@@ -96,7 +96,7 @@
 				<thead>
 					<tr>
 						<th>Episode</th>
-						<th>Série</th>
+						<th>Affiche Episode</th>
 						<th>Résumer</th>
 						<th>Valider</th>
 						<th>Supprimer</th>
@@ -110,7 +110,7 @@
 						 {{ episode.nomEpisode }}
 						</td>
 						<td>
-						 {{ episode.posterEpisode }}
+							<img id="imgValidate" src="{{ episode.episodePoster.getWebPath  }}" alt="poster" >
 						</td>
 						<td>
 							{{ episode.resumeEpisode }}

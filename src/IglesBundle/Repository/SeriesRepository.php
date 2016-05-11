@@ -16,8 +16,9 @@ class SeriesRepository extends EntityRepository
 	public function getSeries()
 	{
 		$query = $this->_em->createQuery(
-    		'SELECT s
+    		'SELECT s, p
     		FROM IglesBundle:Series s
+    		LEFT JOIN s.seriePoster p 
     		WHERE s.moderation = 1
     		ORDER BY s.nomSerie ASC' );
 		

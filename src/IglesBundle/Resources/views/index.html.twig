@@ -49,7 +49,7 @@
         {% for serie in series %}
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
               <figure>
-                <a id="series" href="{{ path('sériesone', { 'id' : serie.id})}}"><img id="imgserieindex" class="img-responsive" src="{{ serie.posterSerie }}" alt="poster"></a>
+                <a id="series" href="{{ path('sériesone', { 'id' : serie.id})}}"><img id="imgserieindex" class="img-responsive" src="{{ serie.seriePoster.getWebPath }}" alt="poster"></a>
               </figure>
             </div>
         {% endfor %}
