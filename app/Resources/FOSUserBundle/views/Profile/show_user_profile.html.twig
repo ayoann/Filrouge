@@ -21,7 +21,7 @@
 					{% for serie in user.follow %}
 						<div class="col-xs-6 col-sm-4 col-lg-4">
 							<a href="{{ path('sériesone',{'id':serie.id}) }}">
-								<img id="imgsuivi" src="{{ asset(serie.posterSerie) }}" alt="{{ serie.nomSerie }}" class="img-responsive">
+								<img id="imgsuivi" src="{{ asset(serie.seriePoster.getWebPath) }}" alt="{{ serie.nomSerie }}" class="img-responsive">
 							</a>
 						</div>
 					{% endfor %}
@@ -60,7 +60,7 @@
 					{% for serie in user.follow %}
 						<div class="col-xs-6 col-sm-4 col-lg-4">
 							<a href="{{ path('sériesone',{'id':serie.id}) }}">
-								<img id="imgsuivi" src="{{ asset(serie.posterSerie) }}" alt="{{ serie.nomSerie }}" class="img-responsive">
+								<img id="imgsuivi" src="{{ asset(serie.seriePoster.getWebPath) }}" alt="{{ serie.nomSerie }}" class="img-responsive">
 							</a>
 						</div>
 					{% endfor %}
