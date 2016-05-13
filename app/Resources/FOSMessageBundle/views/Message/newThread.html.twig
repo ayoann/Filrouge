@@ -8,10 +8,23 @@
         </div>
 
     <form action="{{ url('fos_message_thread_new') }}" method="post">
-        {{ form_widget(form)}}
 
 
-        <input type="submit" />
+        {{ form_label(form.recipient) }}
+        {{ form_widget(form.recipient, {'attr': {'class': 'form-control'}})}}
+
+        
+        {{ form_label(form.subject) }}
+        {{ form_widget(form.subject, {'attr': {'class': 'form-control'}})}}
+
+
+        {{ form_label(form.body) }}
+        {{ form_widget(form.body, {'attr': {'class': 'form-control'}})}}
+
+
+
+        <button class="btn btn-success" type="submit">Valider</button>
+        {{ form_end(form) }}
     </form>
 
 {% endblock %}

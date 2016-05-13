@@ -7,3 +7,14 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+
+    app.form.registration:
+        class: IglesBundle\Form\RegistrationFormType
+        tags:
+            - { name: form.type, alias: app_user_registration }
+
+    app.form.registration:
+        class: IglesBundle\Form\NewThreadMessageFormType
+        tags:
+            - { name: form.type, alias: app_message_message }

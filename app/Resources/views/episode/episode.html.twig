@@ -14,14 +14,16 @@
 
 		<div class="col-xs-7 col-xs-offset-10">
 			{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-				{% if is_granted("ROLE_ADMIN") %}
+				{% if is_granted("ROLE_USER") %}
 					<div class="dropdown">
 						<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Modifier
 							<span class="caret"></span></button>
 						<ul class="dropdown-menu">
 							<li><a href="{{ path('episodes_update', { 'id' : episodes.id})}}">Modifier Episode</a></li>
+						{% if is_granted("ROLE_ADMIN") %}
 							<li class="divider"></li>
 							<li><a href="{{ path('episodes_delete', { 'id' : episodes.id})}}">Supprimer</a></li>
+						{% endif %}
 						</ul>
 					</div>
 				{% endif %}
