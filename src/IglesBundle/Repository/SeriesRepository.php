@@ -18,7 +18,7 @@ class SeriesRepository extends EntityRepository
 		$query = $this->_em->createQuery(
     		'SELECT s, p
     		FROM IglesBundle:Series s
-    		LEFT JOIN s.seriePoster p 
+    		INNER JOIN s.seriePoster p 
     		WHERE s.moderation = 1
     		ORDER BY s.nomSerie ASC' );
 		
