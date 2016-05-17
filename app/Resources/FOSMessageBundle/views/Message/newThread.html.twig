@@ -8,10 +8,16 @@
         </div>
 
     <form action="{{ url('fos_message_thread_new') }}" method="post">
+
+
+
         {{ form_widget(form)}}
 
 
-        <input type="submit" />
+
+
+        <button class="btn btn-success col-lg-offset-2" type="submit">Valider</button>
+
     </form>
 
 {% endblock %}

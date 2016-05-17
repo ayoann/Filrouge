@@ -12,17 +12,14 @@
                <nav class="col-xs-3">
                    <div class="col-xs-offset-3">
                    <ul class="nav nav-pills nav-stacked">
-                       <a href="{{ url('fos_message_thread_new' )}}"><button class="btn btn-info">Nouveau Message</button></a>
+                       <a href="{{ url('fos_message_thread_new' )}}"><button class="btn btn-info"><i class="fa fa-envelope" aria-hidden="true"></i> Nouveau Message</button></a>
                        <li><a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
                        <li><a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></li>
                        <li><a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></li>
                    </ul>
                    </div>
                </nav>
-
-
                            {% block fos_message_content %}{% endblock %}
-
            </div>
        </div>
 
