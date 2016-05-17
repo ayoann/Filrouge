@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use IglesBundle\Entity\Poster;
 
+
 class SeriesType extends AbstractType
 {
     /**

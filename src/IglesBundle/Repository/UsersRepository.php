@@ -12,4 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class UsersRepository extends EntityRepository
 {
+	public function getUsers()
+	{
+		$query = $this->_em->createQuery(
+    		'SELECT u, a
+    		FROM IglesBundle:Users u
+    		INNER JOIN u.avatar a
+    		ORDER BY u.lastName ASC' );
+		
+		return $query->getResult();
+		
+	}
 }

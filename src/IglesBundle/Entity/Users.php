@@ -2,6 +2,7 @@
 
 namespace IglesBundle\Entity;
 
+use IglesBundle\Entity\Poster;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\MessageBundle\Model\ParticipantInterface;
 use FOS\UserBundle\Model\User as BaseUser;
@@ -9,7 +10,8 @@ use FOS\UserBundle\Model\User as BaseUser;
 /**
  * Users
  *
- * @ORM\Table(name="users")
+ * @ORM\Entity
+ * @ORM\Table(name="fos_user")
  * @ORM\Entity(repositoryClass="IglesBundle\Repository\UsersRepository")
  */
 class Users extends BaseUser implements ParticipantInterface
@@ -114,6 +116,7 @@ class Users extends BaseUser implements ParticipantInterface
         parent::__construct();
 
     $this->roles = array('ROLE_USER'); // Ajoute le ROLE_USER par défaut lors de l'inscription au site
+    $this->avatar = new Poster('http://rs1147.pbsrc.com/albums/o550/comediaaa/darth_vader_icon_256x256_by_geo_almighty-d33pmyi.png~c200');
     }
 
 
@@ -204,4 +207,5 @@ class Users extends BaseUser implements ParticipantInterface
         }
         return false;
     }
+
 }
