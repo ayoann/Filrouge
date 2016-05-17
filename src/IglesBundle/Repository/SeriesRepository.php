@@ -18,7 +18,7 @@ class SeriesRepository extends EntityRepository
 		$query = $this->_em->createQuery(
     		'SELECT s, p
     		FROM IglesBundle:Series s
-    		LEFT JOIN s.seriePoster p 
+    		LEFT JOIN s.seriePoster p
     		WHERE s.moderation = 1
     		ORDER BY s.nomSerie ASC' );
 		
@@ -36,6 +36,19 @@ class SeriesRepository extends EntityRepository
 		
 		return $query->getResult();
 		
+	}
+
+	public function getEpisodes()
+	{
+		$query = $this->_em->createQuery(
+			'SELECT s, e, t
+    		FROM IglesBundle:Series s
+    		INNER JOIN s.saisons e
+    		INNER JOIN e.episodes t
+    		ORDER BY e.numeroSaisons ASC' );
+
+		return $query->getResult();
+
 	}
 
 	public function search($like,$limit = 10){

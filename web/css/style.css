@@ -148,10 +148,21 @@ table{
 	margin-bottom: 10px;
 }
 #divsaison{
+	margin-top: 10px;
 	padding-top: 15px;
 	padding-bottom: 10px;
 	background-color: white;
 	box-shadow: 3px 3px 3px;
+}
+#divepisode{
+	margin-top: 30px;
+	margin-left: 60px;
+	background-color: white;
+	box-shadow: 3px 3px 3px;
+}
+#titleepisode{
+	padding-bottom: 20px;
+	font-size: 16px;
 }
 #divresume{
 	margin-top: 45px;

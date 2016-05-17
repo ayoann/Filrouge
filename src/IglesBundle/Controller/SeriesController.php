@@ -39,9 +39,10 @@ class SeriesController extends Controller
         ->find($id);
 
         $saisons = $em->getRepository('IglesBundle:Series')->getSaisons();
+        $episodes = $em->getRepository('IglesBundle:Series')->getEpisodes();
 
         return $this->render('series/serieone.html.twig', 
-            array('series' => $series, "saisons" => $saisons));
+            array('series' => $series, "saisons" => $saisons, "episodes" => $episodes));
 
     }
 
