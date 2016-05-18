@@ -53,9 +53,9 @@
                                 {% block fos_comment_comment_metas_voting %}
                                     {% if fos_comment_can_vote(comment) %}
                                         <div class="fos_comment_comment_voting">
-                                            <button class="btn btn-primary glyphicon glyphicon-thumbs-up" data-url="{{ url("fos_comment_new_thread_comment_votes", {"id": comment.thread.id, "commentId": comment.id, "value": 1}) }}" class="fos_comment_comment_vote"></button>
+                                            <button class="col-xs-offset-9 btn btn-primary glyphicon glyphicon-thumbs-up" data-url="{{ url("fos_comment_new_thread_comment_votes", {"id": comment.thread.id, "commentId": comment.id, "value": 1}) }}" class="fos_comment_comment_vote"></button>
                                             <button class="btn btn-primary glyphicon glyphicon-thumbs-down" data-url="{{ url("fos_comment_new_thread_comment_votes", {"id": comment.thread.id, "commentId": comment.id, "value": -1}) }}" class="fos_comment_comment_vote"></button>
-                                            <div class="fos_comment_comment_score" id="fos_comment_score_{{ comment.id }}">{% include "FOSCommentBundle:Thread:comment_votes.html.twig" with { 'commentScore': comment.score } %}</div>
+                                            <div class=" col-xs-offset-9 fos_comment_comment_score" id="fos_comment_score_{{ comment.id }}">{% include "FOSCommentBundle:Thread:comment_votes.html.twig" with { 'commentScore': comment.score } %}</div>
                                         </div>
                                     {% endif %}
                                 {% endblock fos_comment_comment_metas_voting %}

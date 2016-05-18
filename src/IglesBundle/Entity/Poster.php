@@ -26,13 +26,10 @@ class Poster
      */
     protected $name;
     /**
-<<<<<<< HEAD
      * @Assert\File(maxSize="6000000")
      * @Assert\Image(mimeTypesMessage="Please upload a valid image.")
-=======
      * @Assert\File(maxSize = "3M")
      * )
->>>>>>> fd1f9680f36c8e49d9f5e37803efa5a3942a2a46
      */
     private $posterFile;
     /**
@@ -112,8 +109,7 @@ class Poster
      * @ORM\PreUpdate()
      */
     public function preUpload()
-    {
-        die('hi');  
+    { 
 
         if (null === $this->file) {
             return;

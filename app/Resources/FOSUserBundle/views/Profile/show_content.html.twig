@@ -3,7 +3,7 @@
 {% if is_granted("ROLE_SUPER_ADMIN") %}
 <div class="row">
 	<div id="profile" class="col-xs-3 col-xs-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-1">
-			<img src="{{ asset(user.avatar.getWebPath) }}">
+		<img src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png" width="30" height="100">
 			<p>{{ 'Nom'|trans }}: {{ user.lastName }}</p>
 			<p>{{ 'Prénom'|trans }}: {{ user.firstName }}</p>
 			<p>{{ 'Pseudo'|trans }}: {{ user.username }}</p>

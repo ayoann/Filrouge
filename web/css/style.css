@@ -208,7 +208,7 @@ a:hover{
 	background-color: rgb(93, 188, 118);
 }
 #Accueil, #News, #Series, #forum, #Membres{
-	height: 37px;
+	height: 37.5px;
 	margin-top: 18px;
 	padding-top: 10px;
 	background-color: #6C6C6C;
@@ -408,6 +408,9 @@ img{
 }
 #suivre{
 	margin-top: 15px;
+}
+.tabbable{
+	margin-top: 20px;
 }
 /*footer{
 	height: 40px;
